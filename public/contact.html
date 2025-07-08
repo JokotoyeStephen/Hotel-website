@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="../style/contact.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <section class="header">
+        <section>
+            <div class="nav">
+                <p style="color: #fcfcfc; font-weight: 800; font-size: px;">ZOE</p>
+                <div class="icon" id="our">
+                    &#9776
+                </div>
+
+                <ul class="navbar_list" id="menuicon">
+                    <li> <a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./room.html">Rooms</a></li>
+                    <li><a href="./offer.html">Offers</a></li>
+                    <li><a href="./booking.html">Booking</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+                <button class="btn"><a href="">BOOKING</a></button>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+        </section>
+
+    </section>
+    <section class="hero">
+        <h1>Make a <br><span style="color: #ecbd47;">Contact</span></h1>
+        <div class="header">
+    <img src="../image/" alt="Hotel Banner">
+    <div class="room-images">
+      <img src="../image/homepage-concept-with-search-bar.jpg" alt="">
+      <img src="https://source.unsplash.com/200x130/?hotel,room2" alt="">
+      <img src="https://source.unsplash.com/200x130/?hotel,view" alt="">
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <h2>Hotel Booking</h2>
+    <p>Experience something new every moment</p>
+
+    <form>
+      <div class="row">
+        <div class="input-group">
+          <label>First Name</label>
+          <input type="text" placeholder="First Name" required>
+        </div>
+        <div class="input-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Last Name" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="example@example.com" required>
+        </div>
+        <div class="input-group">
+          <label>Number of Guests</label>
+          <input type="number" placeholder="e.g., 2" min="1" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group">
+          <label>Room Type</label>
+          <select required>
+            <option value="">Please Select</option>
+            <option>Single Room</option>
+            <option>Double Room</option>
+            <option>Deluxe Room</option>
+            <option>Executive Suite</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Arrival Date & Time</label>
+          <input type="datetime-local" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group">
+          <label>Departure Date</label>
+          <input type="date" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Free Pickup?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="pickup" required> Yes Please! - Pick me up on arrival</label>
+          <label><input type="radio" name="pickup"> No Thanks - I'll make my own way there</label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Special Requests</label>
+        <textarea placeholder="Enter your message here..." rows="4"></textarea>
+      </div>
+
+      <div class="input-group">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+  </div>
+    </section>
+
+</body>
+
+</html>

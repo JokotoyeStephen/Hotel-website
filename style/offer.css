@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-style: normal;
+     color: #fff;
+     background-color: #23262d;
+}
+hr {
+    width: 60px;
+    border: 1px solid #ecbd47;
+}
+.header {
+    background-image: url('../image/stock-photo-contemporary-food-served-fashionable-plate-restaurant-healthy-veggie-rolls-with-sauces-served-plate.jpg');
+    height: fit-content;
+    /* background-color: rgba(35, 32, 45, 0.5); */
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    float: left;
+    z-index: 5;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(35, 32, 45, 0.5);
+    top: 0;
+}
+.navbar_list{
+    margin: auto;
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.navbar_list a{
+    text-decoration: none;
+    color: #fcfcfc;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+}
+.navbar_list a:hover {
+    color: #e5a11e;
+}
+/* end of navbar style */
+.icon {
+    display:none;
+    color: #e5a11e;
+    font-size: 30px;
+    padding-right: 00px;
+    cursor: pointer;
+}
+/* the icon for responsiveness */
+.btn {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+}
+.btn a:hover{
+    color: #23262d;
+}
+.btn a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+.he {
+    padding-top: 22vh;
+    text-align: center;
+    padding-bottom: 10vh;
+}
+.he h1{
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+.hero {
+    padding-left: 40px;
+    gap: 40px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 320px;
+  background-image: url('../image/shrimp-batter-lettuce-tomato.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px dotted #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card1 {
+  position: relative;
+  width: 350px;
+  height: 320px;
+  background-image: url('../image/penne-pasta-with-cream-cheese-sauteed-vegetables.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px dotted #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card2 {
+  position: relative;
+  width: 350px;
+  height: 320px;
+  background-image: url('../image/various-dessert-glass-white-wine.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px dotted #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+}
+
+.card-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.card-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fbbf24;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-btn:hover {
+  background: #e0a800;
+}

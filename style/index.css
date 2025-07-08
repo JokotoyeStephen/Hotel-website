@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+     color: #fff;
+     background-color: #23262d;
+}
+hr {
+    width: 60px;
+    border: 1px solid #ecbd47;
+}
+.header {
+    background-image: url('../image/medium-shot-man-living-as-digital-nomad.jpg');
+    height: 95vh;
+    /* background-color: rgba(35, 32, 45, 0.5); */
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: head;
+    animation-duration: 30s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes head {
+    0% {background-image: url('../image/back.jpg');background-repeat: no-repeat;background-size: cover;}
+    25% {background-image: url('../image/maLL.jpg');background-repeat: no-repeat;background-size: cover;}
+    100% {background-image: url('../image/hotel-nevada-usa.jpg');background-repeat: no-repeat;background-size: cover;}  
+    50% {background-image: url('../image/swimming-pool.jpg');background-repeat: no-repeat;background-size: cover;}
+}
+.header::before{
+    content: '';
+    position: absolute;
+    background-color: #23262d;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    float: left;
+    z-index: 5;
+    padding: 10px;
+    /* height: 65px; */
+    width: 100%;
+    background-color: rgba(35, 32, 45, 0.2);
+    top: 0;
+}
+.navbar_list{
+    margin: auto;
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.navbar_list a{
+    text-decoration: none;
+    color: #fcfcfc;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+}
+.navbar_list a:hover {
+    color: #e5a11e;
+}
+/* end of navbar style */
+.icon {
+    display:none;
+    color: #e5a11e;
+    font-size: 30px;
+    padding-right: 00px;
+    cursor: pointer;
+}
+/* the icon for responsiveness */
+.btn {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn:hover {
+    background-color: #fcfcfc;
+    transition: 1s ease-in;
+    transform: translateY(+5px);
+}
+.btn a:hover{
+    color: #23262d;
+}
+.btn a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+/* button styling */
+
+/* the hero section where h1 is */
+.hero1{
+    padding-top: 200px;
+    background-color:  rgba(35, 32, 45, 0.5);
+    padding-left: 60px;
+    padding-bottom: 200px;
+}
+.hero1 h1 {
+    font-size: 40px;
+}
+/* stlying for the fixed button */
+.yes{
+    position: fixed;
+    z-index:35 ;
+    /* padding-left: -60px; */
+    display: inline-block;
+    vertical-align: text-top; 
+}
+/* second hero section */
+.hero2{
+   display: flex;
+   z-index: 30;
+   margin-top: -40px;
+   position: absolute;
+}
+.hero2 i {
+    font-size: 40px;
+    margin-top: 20px;
+}
+.hero2a{
+    margin-left: 15%;
+}
+/* the postion abosulte section */
+.custo {
+   margin: auto;
+    display: flex;
+    gap: 20px;
+    color: #fcfcfc;
+    padding: 7px;
+    background-color: #23262d;
+    /* margin: auto; */
+}
+.usto{
+   display: flex;
+    padding: 6px;
+    gap: 20px;
+    color: #fcfcfc;
+    background-color:  rgba(35, 32, 45, 0.5);
+    /* margin: auto; */
+}
+.custo:hover{
+    color: #fcfcfc;
+    background-color: #fbbf24;
+    transition: 2s ease-in-out;
+    transform: translateY(-9px);
+}
+.usto:hover{
+    background-color: #fcfcfc;
+    border: 1px solid #23262d;
+    color: #23262d;
+    transition: 2s ease-in-out;
+    transform: translateY(-9px);
+}
+/* card section */
+.cards{
+    padding-top: 40px;
+    background-image: url(../image/3.jpg);
+    background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    padding-bottom: 60px;
+}
+.btn1 {
+    margin-top: 20px;
+    border: 1px solid #fcfcfc;
+    padding: 10px;
+    background-color: #23262d;
+}
+.btn1:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+    transform: translateY(-9px);
+}
+.btn1 a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+.btn1 a:hover{
+    color: #23262d;
+}
+.cards h2 {
+    color: #23262d;
+    margin-top: 90px;
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+.card h3{
+    color: #e5a11e;
+}
+.card1 {
+    display: flex;
+    gap: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.card{ 
+    background-color:  rgba(35, 32, 45, 0.7);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.card:hover{
+    transform: translateY(-9px);
+}
+.card img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-bottom: 10px;
+}
+/* the next hero section after the card section */
+.hero4{
+   padding: 60px;
+    padding-bottom: 30px;
+    background-color: #23262d;
+}
+.luxury{
+    display: flex;
+    gap: 20px;
+}
+.down {
+    margin-top: 40px;
+}
+/* bootstrap section */
+/* .bootstrap {
+    background-image: url(../image/medium-shot-man-living-as-digital-nomad.jpg);
+} */
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fade 1s ease-in-out;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-color:  rgba(35, 32, 45, 0.3);
+  border-radius: 15px;
+}
+
+.text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text p {
+  font-size: 1rem;
+}
+.orange{
+    color: #fbbf24;
+}
+
+@keyframes fade {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 2rem;
+  }
+  .text p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+
+
+
+
+.footer {
+  border-top: 2px solid #fbbf24;
+  margin-top: 30px;
+  background-color: #23262d;
+  color: #fcfcfc;
+  padding: 50px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+  margin: auto;
+}
+
+.footer-section {
+  flex: 2 5 220px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #fbbf24;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fcfcfc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: #fcfcfc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fbbf24;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #fcfcfc;
+}

@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-style: normal;
+     color: #fff;
+     background-color: #23262d;
+}
+
+.header {
+    background-image: url('../image/lux.jpg');
+    height: fit-content;
+    /* top: 0; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    float: left;
+    z-index: 5;
+    padding: 10px;
+    /* height: 65px; */
+    width: 100%;
+    background-color: rgba(35, 32, 45, 0.5);
+    top: 0;
+}
+.navbar_list{
+    margin: auto;
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.navbar_list a{
+    text-decoration: none;
+    color: #fcfcfc;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+}
+.navbar_list a:hover {
+    color: #fbbf24;
+}
+/* end of navbar style */
+.icon {
+    display:none;
+    color: #fbbf24;
+    font-size: 30px;
+    padding-right: 00px;
+    cursor: pointer;
+}
+/* the icon for responsiveness */
+.btn {
+    background-color: #fbbf24;
+    border: none;
+    padding: 10px;
+}
+.btn:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+}
+.btn a:hover{
+    color: #23262d;
+}
+.btn a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+body {
+  line-height: 1.6;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  /* margin-bottom: 10px; */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #fcfcfc;
+}
+
+h1{
+    color: #e5a11e;
+}
+
+.rooms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.room-card {
+  background-color: rgba(35, 32, 45, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  color: #fcfcfc;
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 20px;
+}
+
+.room-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.room-info .price {
+  color: #fbbf24;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.room-info ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.room-info ul li {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.book-btn {
+  display: inline-block;
+  background-color: #fbbf24;
+  color: white;
+  padding: 7px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #23262d;
+  border: 2px solid #fcfcfc;
+}
+
+/* footer styling */
+
+.footer {
+  border-top: 2px solid #fbbf24;
+  margin-top: 30px;
+  background-color: #23262d;
+  color: #fcfcfc;
+  padding: 50px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+  margin: auto;
+}
+
+.footer-section {
+  flex: 2 5 220px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #fbbf24;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fcfcfc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: #fcfcfc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fbbf24;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #fcfcfc;
+}

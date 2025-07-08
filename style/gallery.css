@@ -1,0 +1,101 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-style: normal;
+     color: #fff;
+     background-color: #23262d;
+}
+
+.header {
+    /* background-image: url('../image/chair.jpg'); */
+    height: fit-content;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: head;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    background-color: #23262d;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    float: left;
+    z-index: 5;
+    padding: 10px;
+    /* height: 65px; */
+    width: 100%;
+    background-color: rgba(35, 32, 45, 0.5);
+    top: 0;
+}
+.navbar_list{
+    margin: auto;
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.navbar_list a{
+    text-decoration: none;
+    color: #fcfcfc;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+}
+.navbar_list a:hover {
+    color: #e5a11e;
+}
+/* end of navbar style */
+.icon {
+    display:none;
+    color: #e5a11e;
+    font-size: 30px;
+    padding-right: 00px;
+    cursor: pointer;
+}
+/* the icon for responsiveness */
+.btn {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+}
+.btn a:hover{
+    color: #23262d;
+}
+.btn a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+.hero {
+     padding-top: 22vh;
+    padding-left: 45px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.somethin {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    gap: 20px;
+}
+h1{
+    font-size: 35px;
+}

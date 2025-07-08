@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-style: normal;
+     color: #fcfcfc;
+     background-color: #23262d;
+}
+hr {
+    width: 60px;
+    border: 1px solid #ecbd47;
+}
+.header {
+    background-image: url('../image/chair.jpg');
+    height: fit-content;
+    /* background-color: rgba(35, 32, 45, 0.5); */
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: head;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes head {
+    0% {background-image: url('../image/medium-shot-man-living-as-digital-nomad.jpg');background-repeat: no-repeat;background-size: cover;}
+    25% {background-image: url('../image/3.jpg');background-repeat: no-repeat;background-size: cover;}
+    100% {background-image: url('../image/chair.jpg');background-repeat: no-repeat;background-size: cover;}  
+    50% {background-image: url('../image/guests-leaving-access-key-card.jpg');background-repeat: no-repeat;background-size: cover;}
+}
+.header::before{
+    content: '';
+    position: absolute;
+    background-color: #23262d;
+}
+.btn {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+}
+.btn a:hover{
+    color: #23262d;
+}
+.btn a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    float: left;
+    z-index: 5;
+    padding: 10px;
+    /* height: 65px; */
+    width: 100%;
+    background-color: rgba(35, 32, 45, 0.3);
+    top: 0;
+}
+.navbar_list{
+    margin: auto;
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.navbar_list a{
+    text-decoration: none;
+    color: #fcfcfc;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+}
+.navbar_list a:hover {
+    color: #e5a11e;
+}
+/* end of navbar style */
+.icon {
+    display:none;
+    color: #e5a11e;
+    font-size: 30px;
+    padding-right: 00px;
+    cursor: pointer;
+}
+/* the icon for responsiveness */
+.btn {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+}
+.btn a:hover{
+    color: #23262d;
+}
+.btn a {
+    height: 20px;
+    text-decoration: none;
+}
+.hero4 p {
+    line-height: 1.7;
+    font-size: 20px;
+}
+.hero4{
+    padding-top: 20vh;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    color: #fcfcfc;
+    background-color: rgba(35, 32, 45, 0.5);
+}
+
+.hero4 h1 {
+    text-align: center;
+    font-size: 40px;
+}
+.hero4 h2 {
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+.luxury{
+    display: flex;
+    gap: 20px;
+    padding-top: 40px;
+}
+.luxury img {
+    background-image: url(../image/2.jpg);
+}
+.down {
+    margin-top: 40px;
+}
+.btn1 {
+    margin-top: 20px;
+    border: 1px solid #fcfcfc;
+    padding: 10px;
+    background-color: #23262d;
+}
+.btn1:hover {
+    background-color: #fcfcfc;
+    transition: 2s ease-in;
+}
+.btn1 a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+.btn1 a:hover{
+    color: #23262d;
+}
+.hero h2 {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+.cord_g{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+}
+.cord{
+    display: flex;
+    gap: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+.cord img {
+    background-color: #e5a11e;
+    padding: 5px;
+    height: 60px;
+    margin-top: 10px;
+}
+.hero{
+    background-color: #23262d;
+    color: #fcfcfc;
+}
+
+
+
+
+
+.footer {
+  border-top: 2px solid #fbbf24;
+  margin-top: 30px;
+  background-color: #23262d;
+  color: #fcfcfc;
+  padding: 50px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+  margin: auto;
+}
+
+.footer-section {
+  flex: 2 5 220px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #fbbf24;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fcfcfc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: #fcfcfc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fbbf24;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #fcfcfc;
+}
