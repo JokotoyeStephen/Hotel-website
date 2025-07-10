@@ -6,17 +6,16 @@ body{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-     color: #fff;
-     background-color: #23262d;
+     color: #f8f8f8;
+     background-color: #4b0f1f;
 }
 hr {
-    width: 60px;
-    border: 1px solid #ecbd47;
+    width: 90px;
+    border: 1px solid #e5a11e;
 }
 .header {
     background-image: url('../image/medium-shot-man-living-as-digital-nomad.jpg');
     height: 95vh;
-    /* background-color: rgba(35, 32, 45, 0.5); */
     top: 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,12 +28,14 @@ hr {
     0% {background-image: url('../image/back.jpg');background-repeat: no-repeat;background-size: cover;}
     25% {background-image: url('../image/maLL.jpg');background-repeat: no-repeat;background-size: cover;}
     100% {background-image: url('../image/hotel-nevada-usa.jpg');background-repeat: no-repeat;background-size: cover;}  
-    50% {background-image: url('../image/swimming-pool.jpg');background-repeat: no-repeat;background-size: cover;}
+    50% {background-image: url('../image/futuristic-landscape-dubai.jpg');background-repeat: no-repeat;background-size: cover;}
+    75% {background-image: url('../image/66.jpg');background-repeat: no-repeat;background-size: cover;}
+    
 }
 .header::before{
     content: '';
     position: absolute;
-    background-color: #23262d;
+    background-color: #f8f8f8;
 }
 .nav{
     display: flex;
@@ -45,7 +46,7 @@ hr {
     padding: 10px;
     /* height: 65px; */
     width: 100%;
-    background-color: rgba(35, 32, 45, 0.2);
+    background-color: #4b0f1f;
     top: 0;
 }
 .navbar_list{
@@ -56,7 +57,7 @@ hr {
 }
 .navbar_list a{
     text-decoration: none;
-    color: #fcfcfc;
+    color: #f8f8f8;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -83,10 +84,11 @@ hr {
 .btn:hover {
     background-color: #fcfcfc;
     transition: 1s ease-in;
-    transform: translateY(+5px);
+    transform: translateY(+3px);
+    border-radius: 18px;
 }
 .btn a:hover{
-    color: #23262d;
+    color: #4b0f1f;
 }
 .btn a {
     color: #fcfcfc;
@@ -98,8 +100,8 @@ hr {
 /* the hero section where h1 is */
 .hero1{
     padding-top: 200px;
-    background-color:  rgba(35, 32, 45, 0.5);
     padding-left: 60px;
+    color: #f8f8f8;
     padding-bottom: 200px;
 }
 .hero1 h1 {
@@ -132,36 +134,35 @@ hr {
    margin: auto;
     display: flex;
     gap: 20px;
-    color: #fcfcfc;
+    color: #f8f8f8;
     padding: 7px;
-    background-color: #23262d;
-    /* margin: auto; */
+    background-color: #4b0f1f;
 }
 .usto{
    display: flex;
     padding: 6px;
     gap: 20px;
-    color: #fcfcfc;
-    background-color:  rgba(35, 32, 45, 0.5);
+    color: #4b0f1f;
+    background-color:  #f8f8f8;
     /* margin: auto; */
 }
 .custo:hover{
-    color: #fcfcfc;
+    color: #f8f8f8;
     background-color: #fbbf24;
     transition: 2s ease-in-out;
     transform: translateY(-9px);
 }
 .usto:hover{
-    background-color: #fcfcfc;
-    border: 1px solid #23262d;
-    color: #23262d;
+    background-color: #f8f8f8;
+    border: 1px solid #e5a11e;
+    color: #4b0f1f;
     transition: 2s ease-in-out;
     transform: translateY(-9px);
 }
 /* card section */
 .cards{
     padding-top: 40px;
-    background-image: url(../image/3.jpg);
+    background-image: url(../image/3d-modern-bedroom-interior.jpg);
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
@@ -169,25 +170,26 @@ hr {
 }
 .btn1 {
     margin-top: 20px;
-    border: 1px solid #fcfcfc;
+    border: 1px solid #f8f8f8;
     padding: 10px;
-    background-color: #23262d;
+    background-color: #4b0f1f;
 }
 .btn1:hover {
     background-color: #fcfcfc;
-    transition: 2s ease-in;
+    transition: 1s ease-in;
     transform: translateY(-9px);
+    border-radius: 20px;
 }
 .btn1 a {
-    color: #fcfcfc;
+    color: #f8f8f8;
     height: 20px;
     text-decoration: none;
 }
 .btn1 a:hover{
-    color: #23262d;
+    color: #4b0f1f;
 }
 .cards h2 {
-    color: #23262d;
+    color: #4b0f1f;
     margin-top: 90px;
     font-size: 30px;
     padding-bottom: 30px;
@@ -202,25 +204,27 @@ hr {
     padding-right: 60px;
 }
 .card{ 
-    background-color:  rgba(35, 32, 45, 0.7);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    background-color: #4b0f1f;
+    color: #f8f8f8;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     padding-bottom: 20px;
 }
 
 .card:hover{
-    transform: translateY(-9px);
+    transform: translateY(-6px);
 }
 .card img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     padding-bottom: 10px;
 }
 /* the next hero section after the card section */
 .hero4{
    padding: 60px;
     padding-bottom: 30px;
-    background-color: #23262d;
+    color: #f8f8f8;
+    background-color: #4b0f1f;
 }
 .luxury{
     display: flex;
@@ -239,9 +243,6 @@ hr {
 /*  */
 /*  */
 
-
-
-
 .carousel {
   position: relative;
   width: 100%;
@@ -252,7 +253,7 @@ hr {
 .slide {
   display: none;
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -260,26 +261,25 @@ hr {
   left: 0;
   animation: fade 1s ease-in-out;
 }
-
 .text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #f8f8f8;
   text-align: center;
   padding: 20px;
-  background-color:  rgba(35, 32, 45, 0.3);
+  background-color: rgba(75, 15, 31, 0.5);
   border-radius: 15px;
 }
 
 .text h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .text p {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .orange{
     color: #fbbf24;
@@ -289,39 +289,15 @@ hr {
   from { opacity: 0.3; }
   to { opacity: 1; }
 }
-
-/* Responsive Text */
-@media (max-width: 768px) {
-  .text h1 {
-    font-size: 2rem;
-  }
-  .text p {
-    font-size: 1rem;
-  }
-}
-
-
-
-
-
-
-
-
-
 /*  */
 /*  */
 /*  */
 /*  */
-
-
-
-
-
 .footer {
   border-top: 2px solid #fbbf24;
   margin-top: 30px;
-  background-color: #23262d;
-  color: #fcfcfc;
+  background-color: #4b0f1f;
+  color: #f8f8f8;
   padding: 50px 20px 20px;
 }
 
@@ -386,7 +362,19 @@ hr {
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #e5a11e;
   font-size: 13px;
   color: #fcfcfc;
 }
+/* Responsive Text */
+@media (max-width: 768px) {
+  .text h1 {
+    font-size: 2rem;
+  }
+  .text p {
+    font-size: 1rem;
+  }
+}
+
+
+

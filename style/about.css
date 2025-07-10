@@ -6,20 +6,20 @@ body{
     font-family: "Montserrat", sans-serif;
     /* font-optical-sizing: auto; */
     font-style: normal;
-     color: #fcfcfc;
-     background-color: #23262d;
+     color: #f8f8f8;
+     background-color: #4b0f1f;
 }
 hr {
-    width: 60px;
-    border: 1px solid #ecbd47;
+    width: 100px;
+    border: 1px solid #e5a11e;
 }
 .header {
     background-image: url('../image/chair.jpg');
     height: fit-content;
-    /* background-color: rgba(35, 32, 45, 0.5); */
     top: 0;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgba(75, 15, 31, 0.4);
     animation-name: head;
     animation-duration: 20s;
     animation-timing-function: ease-in-out;
@@ -27,14 +27,10 @@ hr {
 }
 @keyframes head {
     0% {background-image: url('../image/medium-shot-man-living-as-digital-nomad.jpg');background-repeat: no-repeat;background-size: cover;}
-    25% {background-image: url('../image/3.jpg');background-repeat: no-repeat;background-size: cover;}
+    25% {background-image: url('../image/lobby.avif');background-repeat: no-repeat;background-size: cover;}
     100% {background-image: url('../image/chair.jpg');background-repeat: no-repeat;background-size: cover;}  
     50% {background-image: url('../image/guests-leaving-access-key-card.jpg');background-repeat: no-repeat;background-size: cover;}
-}
-.header::before{
-    content: '';
-    position: absolute;
-    background-color: #23262d;
+    75% {background-image: url('../image/bed.jpg');background-repeat: no-repeat;background-size: cover;}
 }
 .btn {
     background-color: #e5a11e;
@@ -43,10 +39,12 @@ hr {
 }
 .btn:hover {
     background-color: #fcfcfc;
-    transition: 2s ease-in;
+    transition: 1s ease-in;
+    transform: translateY(+3px);
+    border-radius: 18px;
 }
 .btn a:hover{
-    color: #23262d;
+    color: #4b0f1f;
 }
 .btn a {
     color: #fcfcfc;
@@ -62,7 +60,7 @@ hr {
     padding: 10px;
     /* height: 65px; */
     width: 100%;
-    background-color: rgba(35, 32, 45, 0.3);
+    background-color: #4b0f1f;
     top: 0;
 }
 .navbar_list{
@@ -73,7 +71,7 @@ hr {
 }
 .navbar_list a{
     text-decoration: none;
-    color: #fcfcfc;
+    color: #f8f8f8;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -101,9 +99,6 @@ hr {
     background-color: #fcfcfc;
     transition: 2s ease-in;
 }
-.btn a:hover{
-    color: #23262d;
-}
 .btn a {
     height: 20px;
     text-decoration: none;
@@ -118,7 +113,6 @@ hr {
     padding-right: 30px;
     padding-bottom: 30px;
     color: #fcfcfc;
-    background-color: rgba(35, 32, 45, 0.5);
 }
 
 .hero4 h1 {
@@ -134,29 +128,29 @@ hr {
     gap: 20px;
     padding-top: 40px;
 }
-.luxury img {
-    background-image: url(../image/2.jpg);
-}
+
 .down {
     margin-top: 40px;
 }
 .btn1 {
     margin-top: 20px;
-    border: 1px solid #fcfcfc;
+    border: 1px solid #f8f8f8;
     padding: 10px;
-    background-color: #23262d;
+    background-color: #4b0f1f;
 }
 .btn1:hover {
     background-color: #fcfcfc;
-    transition: 2s ease-in;
+    transition: 1s ease-in;
+    transform: translateY(-9px);
+    border-radius: 20px;
 }
 .btn1 a {
-    color: #fcfcfc;
+    color: #f8f8f8;
     height: 20px;
     text-decoration: none;
 }
 .btn1 a:hover{
-    color: #23262d;
+    color: #4b0f1f;
 }
 .hero h2 {
     padding-top: 30px;
@@ -182,19 +176,18 @@ hr {
     margin-top: 10px;
 }
 .hero{
-    background-color: #23262d;
-    color: #fcfcfc;
+    background-color: #4b0f1f;
+    color: #f8f8f8;
 }
 
 
 
-
-
+/*  */
 .footer {
   border-top: 2px solid #fbbf24;
   margin-top: 30px;
-  background-color: #23262d;
-  color: #fcfcfc;
+  background-color: #4b0f1f;
+  color: #f8f8f8;
   padding: 50px 20px 20px;
 }
 
@@ -259,7 +252,7 @@ hr {
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #e5a11e;
   font-size: 13px;
   color: #fcfcfc;
 }

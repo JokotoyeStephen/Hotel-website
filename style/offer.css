@@ -7,7 +7,7 @@ body{
     /* font-optical-sizing: auto; */
     font-style: normal;
      color: #fff;
-     background-color: #23262d;
+     background-color: #4b0f1f;
 }
 hr {
     width: 60px;
@@ -16,7 +16,6 @@ hr {
 .header {
     background-image: url('../image/stock-photo-contemporary-food-served-fashionable-plate-restaurant-healthy-veggie-rolls-with-sauces-served-plate.jpg');
     height: fit-content;
-    /* background-color: rgba(35, 32, 45, 0.5); */
     top: 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,7 +30,7 @@ hr {
     z-index: 5;
     padding: 10px;
     width: 100%;
-    background-color: rgba(35, 32, 45, 0.5);
+      background-color: rgba(75, 15, 31, 0.8);
     top: 0;
 }
 .navbar_list{
@@ -68,10 +67,12 @@ hr {
 }
 .btn:hover {
     background-color: #fcfcfc;
-    transition: 2s ease-in;
+    transition: 1s ease-in;
+    transform: translateY(+3px);
+    border-radius: 18px;
 }
 .btn a:hover{
-    color: #23262d;
+    color: #4b0f1f;
 }
 .btn a {
     color: #fcfcfc;
