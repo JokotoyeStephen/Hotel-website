@@ -1,155 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link rel="stylesheet" href="../style/booking.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/booking.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
 
 </head>
+
 <body>
-       <section class="header">
-        <section>
-            <div class="nav">
-                <p style="color: #fcfcfc; font-weight: 800; font-size: px;">ZOE</p>
-                <div class="icon" id="our">
-                    &#9776
-                </div>
+  <section class="header">
+    <section>
+      <div class="nav">
+        <p style="color: #fcfcfc; font-weight: 800; font-size: px;">ZOE</p>
+        <div class="icon" id="our">
+          &#9776
+        </div>
 
-                <ul class="navbar_list" id="menuicon">
-                    <li> <a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./room.html">Rooms</a></li>
-                    <li><a href="./offer.html">Offers</a></li>
-                    <li><a href="./booking.html">Booking</a></li>
-                    <li><a href="./gallery.html">Gallery</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-                <button class="btn"><a href="">BOOKING</a></button>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <ul class="navbar_list" id="menuicon">
+          <li> <a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./room.html">Rooms</a></li>
+          <li><a href="./offer.html">Offers</a></li>
+          <li><a href="./booking.html">Booking</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <button class="btn"><a href="">BOOKING</a></button>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      </div>
+    </section>
+  </section>
+  <section>
+    <section>
+      <div class="container">
+        <h1>Hotel Booking Form</h1>
+        <form class="booking-form">
+
+          <!-- SECTION 1: Guest Information -->
+          <fieldset>
+            <legend>Guest Information</legend>
+            <section style="display: flex; gap: 100px;">
+              <div><label>Frist Name</label>
+                <input type="text" placeholder="John" required />
+              </div>
+              <div>
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" required />
+              </div>
+            </section>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="example@mail.com" required />
+
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+234 801 234 5678" required />
+
+            <label>Country</label>
+            <input type="text" placeholder="Nigeria" required />
+          </fieldset>
+
+          <!-- SECTION 2: Stay Details -->
+          <fieldset>
+            <legend>Stay Details</legend>
+
+            <label>Check-In Date</label>
+            <input type="date" required />
+
+            <label>Check-Out Date</label>
+            <input type="date" required />
+
+            <label>Number of Guests</label>
+            <input type="number" min="1" max="10" value="2" required />
+
+            <label>Room Type</label>
+            <select required>
+              <option value="">Select Room Type</option>
+              <option>Standard Room</option>
+              <option>Deluxe Room</option>
+              <option>Executive Room</option>
+              <option>Accessible Room</option>
+              <option>Premier Room</option>
+              <option>Presidential Room</option>
+              <option>Twin Room</option>
+              <option>Villa / chalet Room</option>
+              <option>Cabana Room</option>
+            </select>
+          </fieldset>
+
+          <!-- SECTION 3: Additional Services -->
+          <fieldset>
+            <legend>Additional Services</legend>
+            <label><input type="checkbox" /> Breakfast Included</label>
+            <label><input type="checkbox" /> Airport Pickup</label>
+            <label><input type="checkbox" /> Extra Bed</label>
+            <label><input type="checkbox" /> Late Checkout</label>
+          </fieldset>
+
+          <!-- SECTION 4: Special Requests -->
+          <fieldset>
+            <legend>Special Requests</legend>
+            <textarea placeholder="E.g. I need a quiet room, allergic to peanuts..."></textarea>
+          </fieldset>
+
+          <!-- SECTION 5: Payment Info -->
+          <fieldset>
+            <legend>Payment Information</legend>
+
+            <label>Cardholder Name</label>
+            <input type="text" placeholder="John Doe" required />
+
+            <label>Card Number</label>
+            <input type="text" placeholder="1234 5678 9012 3456" required />
+
+            <div class="payment-row">
+              <div>
+                <label>Expiry Date</label>
+                <input type="text" placeholder="MM/YY" required />
+              </div>
+              <div>
+                <label>CVV</label>
+                <input type="text" placeholder="123" required />
+              </div>
             </div>
-        </section>
-       </section>
-    <form>
-      <div class="row">
-        <div class="input-group">
-          <label>First Name</label>
-          <input type="text" placeholder="First Name" required>
-        </div>
-        <div class="input-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Last Name" required>
-        </div>
-      </div>
+          </fieldset>
 
-      <div class="row">
-        <div class="input-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="example@example.com" required>
-        </div>
-        <div class="input-group">
-          <label>Number of Guests</label>
-          <input type="number" placeholder="e.g., 2" min="1" required>
-        </div>
-      </div>
+          <!-- Agreement -->
+          <label class="terms">
+            <input type="checkbox" required />
+            I agree to the <a href="#">terms & conditions</a>.
+          </label>
 
-      <div class="row">
-        <div class="input-group">
-          <label>Room Type</label>
-          <select required>
-            <option value="">Please Select</option>
-            <option>Single Room</option>
-            <option>Double Room</option>
-            <option>Deluxe Room</option>
-            <option>Executive Suite</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label>Arrival Date & Time</label>
-          <input type="datetime-local" required>
-        </div>
+          <button type="submit" class="btn"><a href="">Confirm Booking</a></button>
+        </form>
       </div>
-
-      <div class="row">
-        <div class="input-group">
-          <label>Departure Date</label>
-          <input type="date" required>
-        </div>
-      </div>
-
-      <div class="row">
-        <label>Free Pickup?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="pickup" required> Yes Please! - Pick me up on arrival</label>
-          <label><input type="radio" name="pickup"> No Thanks - I'll make my own way there</label>
-        </div>
-      </div>
-
-      <div class="input-group">
-        <label>Special Requests</label>
-        <textarea placeholder="Enter your message here..." rows="4"></textarea>
-      </div>
-
-      <div class="input-group">
-        <button type="submit" class="btn">Submit</button>
-      </div>
-    </form>
-  </div>
+      <section>
+       <div>
+        <img src="" alt="">
+        <img src="" alt="">
+       </div>
+      </section>
     </section>
 
     <!--  -->
-<!--  -->
-<!--  -->
+    <!--  -->
+    <!--  -->
 
-      <footer class="footer">
-  <div class="footer-container">
-    <!-- About -->
-    <div class="footer-section about">
-      <h3> ZOE Hotel</h3>
-      <p>Experience comfort, luxury, and <br>excellent hospitality in the heart of the city. Your satisfaction is our priority.</p>
-    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- About -->
+        <div class="footer-section about">
+          <h3> ZOE Hotel</h3>
+          <p>Experience comfort, luxury, and <br>excellent hospitality in the heart of the city. Your satisfaction is
+            our
+            priority.</p>
+        </div>
 
-    <!-- Quick Links -->
-    <div class="footer-section links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./room.html">Rooms</a></li>
-        <li><a href="./about.html">About Us</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./book.html">Book Now</a></li>
-      </ul>
-    </div>
+        <!-- Quick Links -->
+        <div class="footer-section links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./room.html">Rooms</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./book.html">Book Now</a></li>
+          </ul>
+        </div>
 
-    <!-- Contact Info -->
-    <div class="footer-section contact">
-      <h4>Contact Us</h4>
-      <p>Email: info@hotelhaven.com</p>
-      <p>Phone: +234 81 44108854</p>
-      <p>Location: LAUTECH Software institute, Nigeria</p>
-    </div>
+        <!-- Contact Info -->
+        <div class="footer-section contact">
+          <h4>Contact Us</h4>
+          <p>Email: info@hotelhaven.com</p>
+          <p>Phone: +234 81 44108854</p>
+          <p>Location: LAUTECH Software institute, Nigeria</p>
+        </div>
 
-    <!-- Social Media -->
-    <div class="footer-section social">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        <!-- Social Media -->
+        <div class="footer-section social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
-  </div>
-</footer>
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
+      </div>
+    </footer>
 </body>
+
 </html>
