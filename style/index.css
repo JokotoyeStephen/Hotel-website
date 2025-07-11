@@ -17,6 +17,7 @@ hr {
     background-image: url('../image/medium-shot-man-living-as-digital-nomad.jpg');
     height: 95vh;
     top: 0;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     animation-name: head;
@@ -39,6 +40,7 @@ hr {
 }
 .nav{
     display: flex;
+    gap: 40px;
     justify-content: space-between;
     position: fixed;
     float: left;
@@ -52,8 +54,8 @@ hr {
 .navbar_list{
     margin: auto;
     display: flex;
-    gap: 24px;
     list-style: none;
+    gap: 24px;
 }
 .navbar_list a{
     text-decoration: none;
@@ -64,6 +66,7 @@ hr {
     font-size: 15px;
     font-weight: 500;
 }
+
 .navbar_list a:hover {
     color: #e5a11e;
 }
@@ -95,12 +98,33 @@ hr {
     height: 20px;
     text-decoration: none;
 }
+
+.btn5 {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn5:hover {
+    background-color: #fcfcfc;
+    transition: 1s ease-in;
+    transform: translateY(+3px);
+    border-radius: 18px;
+}
+.btn5 a:hover{
+    color: #4b0f1f;
+}
+.btn5 a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+
 /* button styling */
 
 /* the hero section where h1 is */
 .hero1{
     padding-top: 200px;
-    padding-left: 60px;
+    padding-left: 40px;
     color: #f8f8f8;
     padding-bottom: 200px;
 }
@@ -206,6 +230,7 @@ hr {
 .card{ 
     background-color: #4b0f1f;
     color: #f8f8f8;
+    width: 400px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     padding-bottom: 20px;
@@ -221,7 +246,7 @@ hr {
 }
 /* the next hero section after the card section */
 .hero4{
-   padding: 60px;
+   padding: 40px;
     padding-bottom: 30px;
     color: #f8f8f8;
     background-color: #4b0f1f;
@@ -233,13 +258,6 @@ hr {
 .down {
     margin-top: 40px;
 }
-/* bootstrap section */
-/* .bootstrap {
-    background-image: url(../image/medium-shot-man-living-as-digital-nomad.jpg);
-} */
-
-
-/*  */
 /*  */
 /*  */
 
@@ -284,7 +302,10 @@ hr {
 .orange{
     color: #fbbf24;
 }
-
+.with {
+  display: flex;
+  gap: 20px;
+}
 @keyframes fade {
   from { opacity: 0.3; }
   to { opacity: 1; }
@@ -366,8 +387,85 @@ hr {
   font-size: 13px;
   color: #fcfcfc;
 }
+
 /* Responsive Text */
 @media (max-width: 768px) {
+  .header {
+    height: 75vh;
+    top: 30;
+    width: 100%;
+  }
+   .icon {
+        display: block;
+        margin-left: 65vw;
+    }
+    .btn5{
+      display: none;
+    }
+     .navbar_list{
+        display: none;
+        line-height: 4;
+        position: absolute;
+        background-color: #4b0f1f;
+        width: 270px;
+        right: 10px;
+        padding: 0;
+        top: 40px;
+    }
+    .navbar_list a {
+        display: block;
+        font-size: 13px;
+        color: #f8f8f8;
+        text-align: center;
+    }
+    .navbar_list.active {
+        display: block;
+    }
+    .navbar_list a:hover {
+        background-color: #f8f8f8;
+        border: 1px solid #e5a11e;
+        color: #4b0f1f;
+    }
+    .hero2a{
+      display: none;
+    }
+    .cards{
+      width: 100%;
+    }
+    .card1{
+      display: block;
+     padding-left: 20px;
+      margin: auto;
+    }
+    .card {
+      margin-top: 20px;
+      width: 350px;
+    }
+    .luxury{
+      gap: 5px;
+      display: block;
+      margin: auto;
+    }
+    .hero1 h1,p,button{
+      padding-left: 0px;
+    }
+    .luxury img{
+      width: 150px;
+    }
+    .down{
+      /* display: none; */
+    }
+
+
+
+
+
+
+
+    
+  footer{
+    text-align: center;
+  }
   .text h1 {
     font-size: 2rem;
   }
