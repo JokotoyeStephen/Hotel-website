@@ -76,6 +76,29 @@ body{
     height: 20px;
     text-decoration: none;
 }
+.btn5 {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn5:hover {
+    background-color: #fcfcfc;
+    transition: 1s ease-in;
+    transform: translateY(+3px);
+    border-radius: 18px;
+}
+.btn5 a:hover{
+    color: #4b0f1f;
+}
+.btn5 a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+
+/*  */
+/*  */
+/*  */
 
 .hero {
   text-align: center;
@@ -242,7 +265,9 @@ h1{
 
 @media (max-width: 768px) {
   .header {
-    height: 95vh;
+    animation: none;
+    background-color: #f8f8f8;
+    background-image: url(../image/);
     top: 30;
     width: 100%;
   }
@@ -285,4 +310,3 @@ h1{
       display: none;
     }
   }
-  

@@ -64,6 +64,29 @@ body{
     color: #f8f8f8;
     text-decoration: none;
 }
+.btn5 {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn5:hover {
+    background-color: #fcfcfc;
+    transition: 1s ease-in;
+    transform: translateY(+3px);
+    border-radius: 18px;
+}
+.btn5 a:hover{
+    color: #4b0f1f;
+}
+.btn5 a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
+}
+
+/*  */
+/*  */
+/*  */
 
 .page-wrapper {
   padding: 30px;
