@@ -266,8 +266,8 @@ h1{
 @media (max-width: 768px) {
   .header {
     animation: none;
-    background-color: #f8f8f8;
-    background-image: url(../image/);
+    /* background-color: #f8f8f8; */
+    background-image: url(../image/beautiful-bright-empire-state-building-nighttime.jpg);
     top: 30;
     width: 100%;
   }
@@ -308,5 +308,9 @@ h1{
     }
     .hero2a{
       display: none;
+    }
+     .footer-container{
+        display: block;
+        text-align: center;
     }
   }
