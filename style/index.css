@@ -391,9 +391,13 @@ hr {
 /* Responsive Text */
 @media (max-width: 768px) {
   .header {
-    height: 75vh;
+    height: 95vh;
     top: 30;
     width: 100%;
+  }
+  h1{
+    font-size: 20px;
+    line-height: 1.2;
   }
    .icon {
         display: block;
@@ -434,7 +438,7 @@ hr {
     }
     .card1{
       display: block;
-     padding-left: 20px;
+     padding-left: 10px;
       margin: auto;
     }
     .card {
@@ -455,7 +459,9 @@ hr {
     .down{
       /* display: none; */
     }
-
+    .the{
+      text-align: justify;
+    }
 
 
 

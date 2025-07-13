@@ -108,7 +108,7 @@ hr {
     font-size: 20px;
 }
 .hero4{
-    padding-top: 20vh;
+    padding-top: 18 vh;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 30px;
@@ -255,4 +255,84 @@ hr {
   border-top: 1px solid #e5a11e;
   font-size: 13px;
   color: #fcfcfc;
+}
+
+@media (max-width: 768px) {
+
+  h1{
+    font-size: 20px;
+    line-height: 1.2;
+  }
+   .icon {
+        display: block;
+        margin-left: 70vw;
+    }
+    .btn5{
+      display: none;
+    }
+     .navbar_list{
+        display: none;
+        line-height: 4;
+        position: absolute;
+        background-color: #4b0f1f;
+        width: 200px;
+        right: 10px;
+        top: 40px;
+    }
+    .navbar_list a {
+        display: block;
+        font-size: 13px;
+        color: #f8f8f8;
+        text-align: center;
+    }
+    .navbar_list.active {
+        display: block;
+    }
+    .navbar_list a:hover {
+        background-color: #f8f8f8;
+        border: 1px solid #e5a11e;
+        color: #4b0f1f;
+    }
+    .header{
+        background-image: url('../image/beautiful-bright-empire-state-building-nighttime.jpg');
+        background-size: cover;
+        animation: none;
+        top: 0;
+        width: 100%;
+        /* height: 100vh; */
+        background-repeat: no-repeat;
+    }
+    .hero4 h1 {
+        text-shadow: 3px 0 #4b0f1f;
+    }
+    .hero4 p {
+        line-height: 1.1;
+    }
+    .hero4{
+        line-height: 1.3;
+    }
+    .luxury img{
+        display: none;
+    }
+    .luxury{
+        display: block;
+        margin: auto;
+    }
+    .cord_g{
+        display: block;
+    }
+    .cord {
+        gap: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
+    .footer{
+        margin: auto;
+    }
+    .footer-container{
+        display: block;
+        text-align: center;
+    }
 }

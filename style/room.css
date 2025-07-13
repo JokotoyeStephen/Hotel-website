@@ -239,3 +239,50 @@ h1{
   font-size: 13px;
   color: #f8f8f8;
 }
+
+@media (max-width: 768px) {
+  .header {
+    height: 95vh;
+    top: 30;
+    width: 100%;
+  }
+  h1{
+    font-size: 20px;
+    line-height: 1.2;
+  }
+   .icon {
+        display: block;
+        margin-left: 65vw;
+    }
+    .btn5{
+      display: none;
+    }
+     .navbar_list{
+        display: none;
+        line-height: 4;
+        position: absolute;
+        background-color: #4b0f1f;
+        width: 270px;
+        right: 10px;
+        padding: 0;
+        top: 40px;
+    }
+    .navbar_list a {
+        display: block;
+        font-size: 13px;
+        color: #f8f8f8;
+        text-align: center;
+    }
+    .navbar_list.active {
+        display: block;
+    }
+    .navbar_list a:hover {
+        background-color: #f8f8f8;
+        border: 1px solid #e5a11e;
+        color: #4b0f1f;
+    }
+    .hero2a{
+      display: none;
+    }
+  }
+  
