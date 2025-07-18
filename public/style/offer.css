@@ -30,7 +30,7 @@ hr {
     z-index: 5;
     padding: 10px;
     width: 100%;
-      background-color: rgba(75, 15, 31, 0.8);
+      /* background-color: rgba(75, 15, 31, 0.8); */
     top: 0;
 }
 .navbar_list{
@@ -58,6 +58,25 @@ hr {
     font-size: 30px;
     padding-right: 00px;
     cursor: pointer;
+}
+.btn5 {
+    background-color: #e5a11e;
+    border: none;
+    padding: 10px;
+}
+.btn5:hover {
+    background-color: #fcfcfc;
+    transition: 1s ease-in;
+    transform: translateY(+3px);
+    border-radius: 18px;
+}
+.btn5 a:hover{
+    color: #4b0f1f;
+}
+.btn5 a {
+    color: #fcfcfc;
+    height: 20px;
+    text-decoration: none;
 }
 /* the icon for responsiveness */
 .btn {
@@ -91,6 +110,7 @@ hr {
 .hero {
     padding-left: 40px;
     gap: 40px;
+    display: flex;
 }
 
 .card {
@@ -176,3 +196,55 @@ hr {
 .card-btn:hover {
   background: #e0a800;
 }
+
+@media (max-width: 768px) {
+  .header{
+    height: 180vh;
+  }
+ h1{
+    font-size: 20px;
+    line-height: 1.2;
+  }
+   .icon {
+        display: block;
+        margin-left: 65vw;
+    }
+    .btn5{
+      display: none;
+    }
+     .navbar_list{
+        display: none;
+        line-height: 4;
+        position: absolute;
+        background-image: url(../image/shrimp-batter-lettuce-tomato.jpg);
+        width: 270px;
+        right: 10px;
+        padding: 0;
+        top: 70px;
+    }
+    .navbar_list a {
+        display: block;
+        font-size: 13px;
+        color: #f8f8f8;
+        text-align: center;
+    }
+    .navbar_list.active {
+        display: block;
+    }
+    .navbar_list a:hover {
+        background-color: #f8f8f8;
+        border: 1px solid #e5a11e;
+        color: #4b0f1f;
+    }
+    .btn5 {
+      display: none;
+    }
+    .card,.card1,.card2{
+      margin-top: 10px;
+    }
+
+    .hero {
+      display: block;
+      padding-left: 20px;
+    }
+  }

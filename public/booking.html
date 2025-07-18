@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../style/booking.css">
+  <link rel="stylesheet" href="./style/booking.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -33,7 +33,7 @@
           <li><a href="./gallery.html">Gallery</a></li>
           <li><a href="./contact.html">Contact</a></li>
         </ul>
-        <button class="btn"><a href="">BOOKING</a></button>
+        <button class="btn5"><a href="">BOOKING</a></button>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </div>
     </section>
@@ -42,29 +42,46 @@
     <section>
       <div class="container">
         <h1>Hotel Booking Form</h1>
-        <form class="booking-form">
-
+        <form class="booking-form" action="/booking" method="POST">
+<!-- id="booking-form" -->
           <!-- SECTION 1: Guest Information -->
           <fieldset>
+            <div id="responseMessage"></div>
             <legend>Guest Information</legend>
-            <section style="display: flex; gap: 100px;">
+            <section class="spacing">
               <div><label>Frist Name</label>
-                <input type="text" placeholder="John" required />
+                <input type="text" placeholder="John" required name="firstname" />
               </div>
               <div>
                 <label>Last Name</label>
-                <input type="text" placeholder="Doe" required />
+                <input type="text" placeholder="Doe" name="lastname" required />
               </div>
             </section>
 
             <label>Email Address</label>
-            <input type="email" placeholder="example@mail.com" required />
+            <input type="email" placeholder="example@mail.com" name="email" required />
 
             <label>Phone Number</label>
-            <input type="tel" placeholder="+234 801 234 5678" required />
+            <input type="tel" placeholder="+234 800 000 0000" name="phone" required />
 
-            <label>Country</label>
-            <input type="text" placeholder="Nigeria" required />
+            <label for="country">Choose your country:</label>
+                  <input list="countries" class="country" id="country" name="country" placeholder="Start typing a country..." />
+
+                  <datalist id="countries">
+                    <option value="Nigeria">
+                    <option value="Ghana">
+                    <option value="Kenya">
+                    <option value="South Africa">
+                    <option value="United States">
+                    <option value="United Kingdom">
+                    <option value="Canada">
+                    <option value="Germany">
+                    <option value="France">
+                    <option value="India">
+                    <option value="China">
+                    <option value="Japan">
+                  </datalist>
+
           </fieldset>
 
           <!-- SECTION 2: Stay Details -->
@@ -72,16 +89,19 @@
             <legend>Stay Details</legend>
 
             <label>Check-In Date</label>
-            <input type="date" required />
+            <input type="date" name="indate" required />
 
             <label>Check-Out Date</label>
-            <input type="date" required />
+            <input type="date" name="outdate" required />
 
             <label>Number of Guests</label>
-            <input type="number" min="1" max="10" value="2" required />
+            <input type="number" min="1" max="10" value="2" name="guest" required />
+            <label>Number of Rooms</label>
+            <input type="number" min="1" max="" value="1" name="noroom" required />
+
 
             <label>Room Type</label>
-            <select required>
+            <select required  name="room">
               <option value="">Select Room Type</option>
               <option>Standard Room</option>
               <option>Deluxe Room</option>
@@ -98,16 +118,16 @@
           <!-- SECTION 3: Additional Services -->
           <fieldset>
             <legend>Additional Services</legend>
-            <label><input type="checkbox" /> Breakfast Included</label>
-            <label><input type="checkbox" /> Airport Pickup</label>
-            <label><input type="checkbox" /> Extra Bed</label>
-            <label><input type="checkbox" /> Late Checkout</label>
+            <label><input name="breakbox" type="checkbox" /> Breakfast Included</label>
+            <label><input name="airbox" type="checkbox" /> Airport Pickup</label>
+            <label><input name="extrabox" type="checkbox" /> Extra Bed</label>
+            <label><input name="latebox" type="checkbox" /> Late Checkout</label>
           </fieldset>
 
           <!-- SECTION 4: Special Requests -->
           <fieldset>
             <legend>Special Requests</legend>
-            <textarea placeholder="E.g. I need a quiet room, allergic to peanuts..."></textarea>
+            <textarea placeholder="E.g. I need a quiet room, allergic to peanuts..." name="message"></textarea>
           </fieldset>
 
           <!-- SECTION 5: Payment Info -->
@@ -115,30 +135,25 @@
             <legend>Payment Information</legend>
 
             <label>Cardholder Name</label>
-            <input type="text" placeholder="John Doe" required />
+            <input type="text" name="fullname" placeholder="John Doe" required />
 
             <label>Card Number</label>
-            <input type="text" placeholder="1234 5678 9012 3456" required />
+            <input type="text" name="card" placeholder="1234 5678 9012 3456" required />
 
             <div class="payment-row">
               <div>
                 <label>Expiry Date</label>
-                <input type="text" placeholder="MM/YY" required />
+                <input type="text" name="expiry" placeholder="MM/YY" required />
               </div>
               <div>
                 <label>CVV</label>
-                <input type="text" placeholder="123" required />
+                <input type="text" name="cw" placeholder="123" required />
               </div>
             </div>
           </fieldset>
 
           <!-- Agreement -->
-          <label class="terms">
-            <input type="checkbox" required />
-            I agree to the <a href="#">terms & conditions</a>.
-          </label>
-
-          <button type="submit" class="btn"><a href="">Confirm Booking</a></button>
+          <button type="submit" class="btn">Confirm Booking</button>
         </form>
       </div>
       <section>
@@ -171,7 +186,7 @@
             <li><a href="./room.html">Rooms</a></li>
             <li><a href="./about.html">About Us</a></li>
             <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./book.html">Book Now</a></li>
+            <li><a href="./booking.html">Book Now</a></li>
           </ul>
         </div>
 
@@ -199,6 +214,7 @@
         <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
       </div>
     </footer>
+    <script src="./script/index.js"></script>
 </body>
 
 </html>

@@ -260,7 +260,44 @@ textarea {
 /* Responsive Text */
 /* Responsive for small screens */
 @media (max-width: 768px) {
-  .page-wrapper {
+  
+.icon {
+        display: block;
+        margin-left: 65vw;
+    }
+    .btn{
+      display: none;
+    }
+     .navbar_list{
+        display: none;
+        line-height: 4;
+        position: absolute;
+        background-color: #4b0f1f;
+        width: 270px;
+        right: 10px;
+        padding: 0;
+        top: 70px;
+    }
+    .navbar_list a {
+        display: block;
+        font-size: 13px;
+        color: #f8f8f8;
+        text-align: center;
+    }
+    .navbar_list.active {
+        display: block;
+    }
+    .navbar_list a:hover {
+        background-color: #f8f8f8;
+        border: 1px solid #e5a11e;
+        color: #4b0f1f;
+    }
+     .footer-container{
+        display: block;
+        text-align: center;
+    }
+
+.page-wrapper {
     flex-direction: column;
   }
 

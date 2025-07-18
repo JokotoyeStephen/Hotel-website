@@ -14,10 +14,6 @@ body{
     top: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    animation-name: head;
-    animation-duration: 20s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
 }
 
 
@@ -60,21 +56,21 @@ body{
     cursor: pointer;
 }
 /* the icon for responsiveness */
-.btn {
+.btn5 {
     background-color: #e5a11e;
     border: none;
     padding: 10px;
 }
-.btn:hover {
+.btn5:hover {
     background-color: #fcfcfc;
     transition: 1s ease-in;
     transform: translateY(+3px);
     border-radius: 18px;
 }
-.btn a:hover{
+.btn5 a:hover{
     color: #4b0f1f;
 }
-.btn a {
+.btn5 a {
     color: #fcfcfc;
     height: 20px;
     text-decoration: none;
@@ -172,3 +168,36 @@ h1{
   font-size: 13px;
   color: #fcfcfc;
 }
+@media (max-width: 768px) {
+     .navbar_list{
+        display: none;
+        line-height: 4;
+        position: absolute;
+        background-color: #4b0f1f;
+        width: 270px;
+        right: 10px;
+        padding: 0;
+        top: 70px;
+    }
+    .navbar_list a {
+        display: block;
+        font-size: 13px;
+        color: #f8f8f8;
+        text-align: center;
+    }
+    .navbar_list.active {
+        display: block;
+    }
+    .navbar_list a:hover {
+        background-color: #f8f8f8;
+        border: 1px solid #e5a11e;
+        color: #4b0f1f;
+    }
+    .btn5 {
+      display: none;
+    }
+     .footer-container{
+        display: block;
+        text-align: center;
+    }
+  }

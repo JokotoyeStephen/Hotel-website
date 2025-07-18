@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Page</title>
-  <link rel="stylesheet" href="../style/contact.css">
+  <link rel="stylesheet" href="./style/contact.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -41,21 +41,23 @@
   <div class="page-wrapper">
     <!-- Left Side: Image -->
     <div class="image-section">
-      <img src="../image/beautiful-bright-empire-state-building-nighttime.jpg" alt="Hotel View" />
+      <img src="./image/beautiful-bright-empire-state-building-nighttime.jpg" alt="Hotel View" />
     </div>
 
     <!-- Right Side: Feedback Form -->
     <div class="form-section">
+
+      
       <div class="container">
         <h1>We Value Your Feedback</h1>
         <p>Please take a moment to share your experience with us.</p>
 
-        <form class="feedback-form">
+        <form class="feedback-form" action="/contact" method="POST">
           <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="John Doe" required />
+          <input type="text" id="name" placeholder="John Doe" name="name" required />
 
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@example.com" required />
+          <input type="email" id="email" placeholder="you@example.com" name="lastname" required />
 
           <label>Overall Rating</label>
           <div class="stars">
@@ -115,7 +117,7 @@
           <li><a href="./room.html">Rooms</a></li>
           <li><a href="./about.html">About Us</a></li>
           <li><a href="./contact.html">Contact</a></li>
-          <li><a href="./book.html">Book Now</a></li>
+          <li><a href="./booking.html">Book Now</a></li>
         </ul>
       </div>
 
@@ -143,6 +145,7 @@
       <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
     </div>
   </footer>
+  <script src="./script/index.js"></script>
 </body>
 
 </html>
