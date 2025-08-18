@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Rooms | Hotel Haven</title>
+    <title>Our Rooms</title>
     <link rel="stylesheet" href="./style/room.css">
 </head>
 
@@ -14,7 +14,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 </style>
 
-<body>
+<body onload="pageload()">
 
     <section class="header">
         <section>
@@ -30,10 +30,10 @@
                     <li><a href="./room.html">Rooms</a></li>
                     <li><a href="./offer.html">Offers</a></li>
                     <li><a href="./booking.html">Booking</a></li>
-                    <li><a href="./gallery.html">Gallery</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li class="gallery"><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Feedback</a></li>
                 </ul>
-                <button class="btn5"><a href="./booking.html">BOOKING</a></button>
+                <button class="btn5"><a href="./booking.html"> BOOKING</a></button>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
         </section>
@@ -42,144 +42,157 @@
     <!-- Hero Section -->
     <header class="hero">
         <h1>Latest SUITE</h1>
-        <p>Find your perfect stay with us</p>
+        <p>Find your perfect stay with us, Check through all our Room and choose the one that Best fit you.</p>
     </header>
 
     <!-- Rooms Section -->
     <section class="rooms-container">
 
         <!-- Room Card -->
-        <div class="room-card">
-            <img src="./image/bed.jpg" alt="Deluxe Room">
-            <div class="room-info">
-                <h2>Deluxe Room</h2>
-                <p class="price">₦95,000 / night</p>
-                <ul>
-                    <li>✓ Free Wi-Fi</li>
-                    <li>✓ Air Conditioning</li>
-                    <li>✓ Breakfast Included</li>
-                    <li>✓ King-size Bed</li>
-                </ul>
-                <a href="./booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
+      <!-- Room Card -->
+       <!-- Standard Room -->
+<div class="room-card">
+    <img src="./image/per.avif" alt="Standard Room">
+    <div class="room-info">
+        <h2>Standard Room</h2>
+        <p class="price">₦70,000 / night</p>
+        <ul>
+            <li>✓ Free Wi-Fi</li>
+            <li>✓ Flat Screen TV</li>
+            <li>✓ Room Service</li>
+            <li>✓ Queen-size Bed</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Standard">Book Now</a></button>
+    </div>
+</div>
 
-        <!-- Room Card -->
-        <div class="room-card">
-            <img src="./image/per.avif" alt="Standard Room">
-            <div class="room-info">
-                <h2>Standard Room</h2>
-                <p class="price">₦70,000 / night</p>
-                <ul>
-                    <li>✓ Free Wi-Fi</li>
-                    <li>✓ Flat Screen TV</li>
-                    <li>✓ Room Service</li>
-                    <li>✓ Queen-size Bed</li>
-                </ul>
-                <a href="booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
+<div class="room-card">
+    <img src="./image/bed.jpg" alt="Deluxe Room">
+    <div class="room-info">
+        <h2>Deluxe Room</h2>
+        <p class="price">₦95,000 / night</p>
+        <ul>
+            <li>✓ Free Wi-Fi</li>
+            <li>✓ Air Conditioning</li>
+            <li>✓ Breakfast Included</li>
+            <li>✓ King-size Bed</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Deluxe">Book Now</a></button>
+    </div>
+</div>
 
-        <!-- Room Card -->
-        <div class="room-card">
-            <img src="./image/modern-luxury-bedroom-suite-bathroom.jpg" alt="Executive Suite">
-            <div class="room-info">
-                <h2>Executive Suite</h2>
-                <p class="price">₦165,000 / night</p>
-                <ul>
-                    <li>✓ Lounge Area</li>
-                    <li>✓ Jacuzzi Bath</li>
-                    <li>✓ Smart TV + Netflix</li>
-                    <li>✓ Balcony View</li>
-                </ul>
-                <a href="booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
-         <div class="room-card">
-            <img src="./image/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table.jpg" alt="Standard Room">
-            <div class="room-info">
-                <h2>Accessible Room</h2>
-                <p class="price">₦200,000 / night</p>
-                <ul>
-                    <li>✓ Free Wi-Fi</li>
-                    <li>✓ 48" HD TV with more than 60 channelsV</li>
-                    <li>✓ Room Service</li>
-                    <li>✓ Queen-size Bed & Hight quality bed sheets</li>
-                </ul>
-                <a href="./booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
-         <div class="room-card">
-            <img src="./image/no.avif" alt="Standard Room">
-            <div class="room-info">
-                <h2>Premier Suite</h2>
-                <p class="price">₦300,000 / night</p>
-                <ul>
-                    <li>✓ Free WIFI internet connection</li>
-                    <li>✓ Flat Screen TV</li>
-                    <li>✓ Connecting room by request</li>
-                    <li>✓ High comfortable mattress bed</li>
-                </ul>
-                <a href="booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
-         <div class="room-card">
-            <img src="./image/pres.jpg" alt="Standard Room">
-            <div class="room-info">
-                <h2>Presidential Suite</h2>
-                <p class="price">₦350,000 / night</p>
-                <ul>
-                    <li>✓ Free Wi-Fi</li>
-                    <li>✓ Flat Screen TV</li>
-                    <li>✓ Room Service & Coffee and tea makers</li>
-                    <li>✓ Queen-size Bed & High comfortable mattress bed</li>
-                </ul>
-                <a href="./booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
 
-          <div class="room-card">
-            <img src="./image/3d-rendering-luxury-bedroom-suite-resort-hotel-with-twin-bed-living.jpg" alt="Standard Room">
-            <div class="room-info">
-                <h2>Twin Room</h2>
-                <p class="price">₦180,000 / night</p>
-                <ul>
-                    <li>✓ Free Wi-Fi</li>
-                    <li>✓ Flat Screen TV</li>
-                    <li>✓ Room Service</li>
-                    <li>✓ Queen-size Bed</li>
-                </ul>
-                <a href="./booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
-         <div class="room-card">
-            <img src="./image/premium_photo-1675616563084-63d1f129623d.avif" alt="Standard Room">
-            <div class="room-info">
-                <h2>Villa / Chalet</h2>
-                <p class="price">₦370,000 / night</p>
-                <ul>
-                    <li>✓ Free WIFI internet connection</li>
-                    <li>✓ 70" Smart TV with more than 60 channels</li>
-                    <li>✓ Room Service & Hot & cold bathing</li>
-                    <li>✓ Queen-size Bed & High comfortable mattress bed</li>
-                </ul>
-                <a href="booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
-         <div class="room-card">
-            <img src="./image/ee.avif" alt="Standard Room">
-            <div class="room-info">
-                <h2>Cabana Room</h2>
-                <p class="price">₦450,000 / night</p>
-                <ul>
-                    <li>✓ Free WIFI internet connection & Connecting room by request</li>
-                    <li>✓ 80" Smart TV with more than 80 channels</li>
-                    <li>✓ Room Service & Coffee and tea makers</li>
-                    <li>✓ High comfortable mattress bed & Hight quality bed sheets</li>
-                </ul>
-                <a href="./booking.html" class="book-btn">Book Now</a>
-            </div>
-        </div>
+<!-- Executive Suite -->
+<div class="room-card">
+    <img src="./image/modern-luxury-bedroom-suite-bathroom.jpg" alt="Executive Suite">
+    <div class="room-info">
+        <h2>Executive Suite</h2>
+        <p class="price">₦165,000 / night</p>
+        <ul>
+            <li>✓ Lounge Area</li>
+            <li>✓ Jacuzzi Bath</li>
+            <li>✓ Smart TV + Netflix</li>
+            <li>✓ Balcony View</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Executive">Book Now</a></button>
+    </div>
+</div>
+
+<!-- Accessible Room -->
+<div class="room-card">
+    <img src="./image/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table.jpg" alt="Accessible Room">
+    <div class="room-info">
+        <h2>Accessible Room</h2>
+        <p class="price">₦200,000 / night</p>
+        <ul>
+            <li>✓ Free Wi-Fi</li>
+            <li>✓ 48" HD TV with more than 60 channels</li>
+            <li>✓ Room Service</li>
+            <li>✓ Queen-size Bed & High quality bed sheets</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Accessible">Book Now</a></button>
+    </div>
+</div>
+
+<!-- Premier Suite -->
+<div class="room-card">
+    <img src="./image/no.avif" alt="Premier Suite">
+    <div class="room-info">
+        <h2>Premier Suite</h2>
+        <p class="price">₦300,000 / night</p>
+        <ul>
+            <li>✓ Free WIFI internet connection</li>
+            <li>✓ Flat Screen TV</li>
+            <li>✓ Connecting room by request</li>
+            <li>✓ High comfortable mattress bed</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Premier">Book Now</a></button>
+    </div>
+</div>
+
+<!-- Presidential Suite -->
+<div class="room-card">
+    <img src="./image/pres.jpg" alt="Presidential Suite">
+    <div class="room-info">
+        <h2>Presidential Suite</h2>
+        <p class="price">₦350,000 / night</p>
+        <ul>
+            <li>✓ Free Wi-Fi</li>
+            <li>✓ Flat Screen TV</li>
+            <li>✓ Room Service & Coffee and tea makers</li>
+            <li>✓ Queen-size Bed & High comfortable mattress bed</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Presidential">Book Now</a></button>
+    </div>
+</div>
+
+<!-- Twin Room -->
+<div class="room-card">
+    <img src="./image/rooms.jpg" alt="Twin Room">
+    <div class="room-info">
+        <h2>Twin Room</h2>
+        <p class="price">₦180,000 / night</p>
+        <ul>
+            <li>✓ Free Wi-Fi</li>
+            <li>✓ Flat Screen TV</li>
+            <li>✓ Room Service</li>
+            <li>✓ Queen-size Bed</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Twin">Book Now</a></button>
+    </div>
+</div>
+
+<!-- Villa -->
+<div class="room-card">
+    <img src="./image/premium_photo-1675616563084-63d1f129623d.avif" alt="Villa / Chalet">
+    <div class="room-info">
+        <h2>Villa / Chalet</h2>
+        <p class="price">₦370,000 / night</p>
+        <ul>
+            <li>✓ Free WIFI internet connection</li>
+            <li>✓ 70" Smart TV with more than 60 channels</li>
+            <li>✓ Room Service & Hot & cold bathing</li>
+            <li>✓ Queen-size Bed & High comfortable mattress bed</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Villa">Book Now</a></button>
+    </div>
+</div>
+
+<!-- Cabana -->
+<div class="room-card">
+    <img src="./image/ee.avif" alt="Cabana Room">
+    <div class="room-info">
+        <h2>Cabana Room</h2>
+        <p class="price">₦450,000 / night</p>
+        <ul>
+            <li>✓ Free WIFI internet connection & Connecting room by request</li>
+            <li>✓ 80" Smart TV with more than 80 channels</li>
+            <li>✓ Room Service & Coffee and tea makers</li>
+            <li>✓ High comfortable mattress bed & High quality bed sheets</li>
+        </ul>
+        <button class="book-btn"><a href="booking.html?room=Cabana">Book Now</a></button>
+    </div>
+</div>
     </section>
    </section>
     <!-- Footer -->
@@ -227,7 +240,8 @@
     <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
   </div>
 </footer>
-<script src="./script/index.js"></script>
+
+<script src="./script/room.js"></script>
 </body>
 
 </html>

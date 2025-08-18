@@ -5,9 +5,14 @@ import nodemailer from "nodemailer";
 import PDFDocument from "pdfkit";
 import fs from "fs";
 import path from "path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import QRCode from "qrcode";
+import { dirname } from "path";
+import mongoose from "mongoose";
+import Reservation from "./models/reservation.js";
+import { fileURLToPath } from "url";
+import Swal from "sweetalert2";
+import axios from "axios";
+
 
 const _dirname = dirname(fileURLToPath(import.meta.url));
 dotenv.config();
@@ -18,149 +23,254 @@ const PORT = process.env.PORT || 2025;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-const filepath = path.join(_dirname, "public");
-app.use(express.static(filepath));
+const publicPath = path.join(_dirname, "public");
+app.use(express.static(publicPath));
+
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.error("MongoDB connection error:", err.message));
+
+// Room pricing
+const roomPrices = {
+  "standard room": 95000,
+  "deluxe room": 70000,
+  "executive room": 165000,
+  "accessible room": 200000,
+  "premier room": 300000,
+  "presidential room": 350000,
+  "twin room": 180000,
+  "villa room": 370000,
+  "cabana room": 450000,
+};
+
+// Night calculation
+function calculateNights(indate, outdate) {
+  const checkIn = new Date(indate);
+  const checkOut = new Date(outdate);
+  const diffTime = Math.abs(checkOut - checkIn);
+  return Math.ceil(diffTime / (1000 * 60 * 60 * 24)) || 1;
+}
 
 app.post("/booking", async (req, res) => {
-  const {
-    indate, outdate, firstname, email, phone, country,
-    lastname, guest, breakbox, room, airbox, extrabox,
-    latebox, message, fullname, card, expiry, cw
-  } = req.body;
-
-  const reservationID = `RES-${Math.floor(100000 + Math.random() * 900000)}`;
-
-  // Calculate stay duration in days
-  const inDateObj = new Date(indate);
-  const outDateObj = new Date(outdate);
-  const stayDuration = Math.ceil((outDateObj - inDateObj) / (1000 * 60 * 60 * 24));
-
-  // Define room prices
-  const roomPrices = {
-    "standard room": 95000,
-    "deluxe room": 70000,
-    "executive room": 165000,
-    "accessible room": 200000,
-    "premier room": 300000,
-    "presidential room": 350000,
-    "twin room": 180000,
-    "villa room": 370000,
-    "cabana room": 450000
-  };
-
-  const selectedRoom = room.toLowerCase();
-  let basePrice = roomPrices[selectedRoom] || 0;
-  let totalPrice = basePrice * stayDuration;
-
-  if (breakbox === 'on') totalPrice += 4500 * stayDuration;
-  if (airbox !== 'on') totalPrice += 30000;
-  if (extrabox === 'on') totalPrice += 50000;
-  if (latebox === 'on') totalPrice += 10000;
-  if (message && message.trim() !== '') totalPrice += 10000;
-
-  const pdfFilename = `booking-${Date.now()}.pdf`;
-  const pdfPath = path.join(_dirname, 'public', pdfFilename);
-  const doc = new PDFDocument();
-  const writeStream = fs.createWriteStream(pdfPath);
-  doc.pipe(writeStream);
-
-  const logoPath = path.join(_dirname, 'public', 'hotel-logo.png');
-  if (fs.existsSync(logoPath)) {
-    doc.image(logoPath, 50, 30, { width: 40 });
-  }
-  doc.moveDown(3);
-
-  doc.fontSize(16).text(`Reservation ID: ${reservationID}`, { align: "right" });
-  doc.moveDown();
-
-  doc.fontSize(20).text('ZOE Hotel Booking Details', { underline: true });
-  doc.moveDown();
-  doc.fontSize(12).text(`Name: ${firstname} ${lastname}`);
-  doc.text(`Email: ${email}`);
-  doc.text(`Phone: ${phone}`);
-  doc.text(`Country: ${country}`);
-  doc.text(`Check-in Date: ${indate}`);
-  doc.text(`Check-out Date: ${outdate}`);
-  doc.text(`Number of Guests: ${guest}`);
-  doc.text(`Room Type: ${room}`);
-  doc.text(`Stay Duration: ${stayDuration} night(s)`);
-  doc.text(`Breakfast: ${breakbox === 'on' ? 'Yes' : 'No'}`);
-  doc.text(`Airport Pickup: ${airbox === 'on' ? 'Yes' : 'No'}`);
-  doc.text(`Extra Bed: ${extrabox === 'on' ? 'Yes' : 'No'}`);
-  doc.text(`Late Checkout: ${latebox === 'on' ? 'Yes' : 'No'}`);
-  doc.text(`Special Request: ${message || 'None'}`);
-  doc.text(`Total Price: ₦ ${totalPrice.toLocaleString()}`);
-  doc.moveDown();
-
-  doc.fontSize(14).text('Payment Info', { underline: true });
-  doc.fontSize(12).text(`Cardholder: ${fullname}`);
-  doc.text(`Card Number: ${card}`);
-  doc.text(`Expiry: ${expiry}`);
-  doc.text(`CW: ${cw}`);
-  doc.moveDown();
-
-  const qrDataURL = await QRCode.toDataURL(reservationID);
-  const qrImage = qrDataURL.replace(/^data:image\/png;base64,/, "");
-  const qrPath = path.join(_dirname, 'public', `qr-${Date.now()}.png`);
-  fs.writeFileSync(qrPath, qrImage, 'base64');
-  doc.text('Scan QR Code for Booking ID:');
-  doc.image(qrPath, { width: 100, align: "left" });
-  doc.end();
-
-  await new Promise(resolve => writeStream.on('finish', resolve));
-
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
-    },
-    tls: { rejectUnauthorized: false }
-  });
-
-  const adminMail = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: `New Booking from ${firstname} ${lastname}`,
-    html: `<h2>New Booking Received</h2><p>See attached reservation details.</p>`,
-    attachments: [
-      {
-        filename: 'BookingDetails.pdf',
-        path: pdfPath
-      }
-    ]
-  };
-
-  const guestMail = {
-    from: process.env.EMAIL_USER,
-    to: email,
-    subject: 'Your Booking Confirmation',
-    html: `<h2>Hello ${firstname},</h2><p>Your reservation is confirmed. ID: <strong>${reservationID}</strong></p><p>Total Price: ₦ ${totalPrice.toLocaleString()}</p><p>PDF attached with full details.</p>`,
-    attachments: [
-      {
-        filename: 'BookingConfirmation.pdf',
-        path: pdfPath
-      }
-    ]
-  };
-
-
   try {
+    const {
+      indate, outdate, firstname, email, phone, country,
+      lastname, guest, breakbox, room, airbox, extrabox,
+      latebox, message, pet
+    } = req.body;
+
+    // Convert form checkbox values to booleans
+    const parsedBreakbox = breakbox === "on";
+    const parsedAirbox = airbox === "on";
+    const parsedExtrabox = extrabox === "on";
+    const parsedLatebox = latebox === "on";
+    const parsedpet = pet === "on";
+
+
+    const nights = calculateNights(indate, outdate);
+    const roomKey = room.trim().toLowerCase();
+    const roomPrice = roomPrices[roomKey] || 0;
+
+    let addons = 0;
+    if (parsedBreakbox) addons += 4500 * nights;
+    if (parsedAirbox) addons += 30000;
+    if (parsedExtrabox) addons += 50000;
+    if (parsedLatebox) addons += 10000;
+    if (parsedpet) addons += 10000;
+    if (message?.trim()) addons += 10000;
+
+    const totalPrice = roomPrice * nights + addons;
+    const reservationID = `RES-${Math.floor(100000 + Math.random() * 900000)}`;
+
+    const pdfFilename = `booking-${Date.now()}.pdf`;
+    const pdfPath = path.join(publicPath, pdfFilename);
+    const doc = new PDFDocument();
+    const writeStream = fs.createWriteStream(pdfPath);
+    doc.pipe(writeStream);
+
+    // Hotel logo
+    const logoPath = path.join(publicPath, "hotel-logo.png");
+    if (fs.existsSync(logoPath)) {
+      doc.image(logoPath, 50, 30, { width: 100 });
+    }
+
+    doc.moveDown(3);
+    doc.fontSize(18).text(`Reservation ID: ${reservationID}`, { align: "right" });
+    doc.moveDown();
+
+    doc.fontSize(20).fillColor("darkblue").text("Booking Confirmation", { underline: true });
+    doc.moveDown();
+
+    doc.fontSize(12).fillColor("black");
+    doc.text(`Name: ${firstname} ${lastname}`);
+    doc.text(`Room Type: ${room}`);
+    doc.text(`Check-in: ${indate}`);
+    doc.text(`Check-out: ${outdate}`);
+    doc.text(`Total Price: ?${totalPrice.toLocaleString()}`);
+    doc.text("Includes:");
+    if (parsedBreakbox) doc.text("- Breakfast");
+    if (parsedAirbox) doc.text("- Airport Pickup");
+    if (parsedExtrabox) doc.text("- Extra Bed");
+    if (parsedLatebox) doc.text("- Late Checkout");
+    if (parsedpet) doc.text("- pets");
+    if (message?.trim()) doc.text("- Special Request");
+
+    doc.moveDown();
+
+    const qrDataURL = await QRCode.toDataURL(reservationID);
+    const qrImage = qrDataURL.replace(/^data:image\/png;base64,/, "");
+    const qrPath = path.join(publicPath, `qr-${Date.now()}.png`);
+    fs.writeFileSync(qrPath, qrImage, "base64");
+
+    doc.text("Scan QR Code for Reservation:");
+    doc.image(qrPath, { width: 100 });
+    doc.end();
+
+    await new Promise(resolve => writeStream.on("finish", resolve));
+
+    // Save to database
+    await Reservation.create({
+      firstname,
+      lastname,
+      email,
+      phone,
+      country,
+      indate,
+      outdate,
+      guest,
+      room,
+      breakbox: parsedBreakbox,
+      airbox: parsedAirbox,
+      extrabox: parsedExtrabox,
+      latebox: parsedLatebox,
+      pet: parsedpet,
+      message,
+      totalPrice,
+      reservationID,
+    });
+
+    // Email transporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+
+    // Admin Email
+    const adminMail = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `New Booking from ${firstname} ${lastname}`,
+      html: `
+        <h2>Full Booking Details</h2>
+        <p><strong>Reservation ID:</strong> ${reservationID}</p>
+        <p><strong>Name:</strong> ${firstname} ${lastname}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>Guests:</strong> ${guest}</p>
+        <p><strong>Room:</strong> ${room}</p>
+        <p><strong>Check-in:</strong> ${indate}</p>
+        <p><strong>Check-out:</strong> ${outdate}</p>
+        <p><strong>Breakfast:</strong> ${parsedBreakbox ? "Yes" : "No"}</p>
+        <p><strong>Airport Pickup:</strong> ${parsedAirbox ? "Yes" : "No"}</p>
+        <p><strong>Extra Bed:</strong> ${parsedExtrabox ? "Yes" : "No"}</p>
+        <p><strong>Late Checkout:</strong> ${parsedLatebox ? "Yes" : "No"}</p>
+        <p><strong>With Pet:</strong> ${parsedpet ? "Yes" : "No"} </p>
+        <p><strong>Special Request:</strong> ${message}</p>
+        <p><strong>Total Price:</strong> ₦${totalPrice.toLocaleString()}</p>
+      `,
+      attachments: [{ filename: "BookingDetails.pdf", path: pdfPath }],
+    };
+
+    // Guest Email
+    const guestMail = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "Your Booking Confirmation",
+      html: `
+        <h2>Hi ${firstname},</h2>
+        <p>Your booking has been confirmed. Details below:</p>
+        <ul>
+          <li><strong>Reservation ID:</strong> ${reservationID}</li>
+          <li><strong>Room:</strong> ${room}</li>
+          <li><strong>Check-in:</strong> ${indate}</li>
+          <li><strong>Check-out:</strong> ${outdate}</li>
+          <li><strong>Total Price:</strong> ? ${totalPrice.toLocaleString()}</li>
+        </ul>
+        <p>Thank you for booking with ZOE Hotel.</p>
+      `,
+      attachments: [{ filename: "BookingConfirmation.pdf", path: pdfPath }],
+    };
+
     await transporter.sendMail(adminMail);
     await transporter.sendMail(guestMail);
-    res.redirect("/successful.html")
-    console.log("successfilly sent")
-  } catch (error) {
-    console.error("Email error:", error.message);
-    res.status(500).send("Error sending email.");
-  } finally {
+
+    res.redirect("/successful.html");
+    console.log("Email sent and booking saved.");
+
+    // Delete files after 30 seconds
     setTimeout(() => {
       fs.unlink(pdfPath, () => {});
       fs.unlink(qrPath, () => {});
     }, 30000);
+
+  } catch (err) {
+    console.error("Booking error:", err.message);
+    res.redirect("/error.html");
   }
 });
 
+app.post("/feedback", async (req, res) => {
+  // let star =star.value
+
+  const { name, email, comment, rating, clean, service } = req.body;
+  // console.log(req.body);
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+    tls: { rejectUnauthorized: false },
+  });
+
+  const mailOptions = {
+    from: email,
+    to: process.env.EMAIL_USER,
+    subject: `New Feedback from ${name}`,
+    html: `
+      <h1> New Feedback Received </h1>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Comment:</strong> ${comment}</p>
+      <p><strong>Rate us:</strong> ${rating}</p>
+      <p><strong>Cleanliness:</strong> ${clean}</p>
+      <p><strong>Service:</strong> ${service}</p>
+    `
+  };
+
+try {
+  await transporter.sendMail(mailOptions);
+  res.redirect("/successful.html"); 
+}
+catch (err) {
+  console.log("send error:",err.message);
+   res.redirect("/error.html");
+};
+})
+
+
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

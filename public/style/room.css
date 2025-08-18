@@ -95,7 +95,10 @@ body{
     height: 20px;
     text-decoration: none;
 }
-
+button{
+  border: none;
+  /* padding: 20px; */
+}
 /*  */
 /*  */
 /*  */
@@ -176,12 +179,15 @@ h1{
 .book-btn {
   display: inline-block;
   background-color: #fbbf24;
-  color: #f8f8f8;
-  padding: 4px;
+  padding: 10px;
   text-decoration: none;
   transition: background 0.3s;
+  color: #f8f8f8;
 }
-
+.book-btn a{
+    text-decoration: none;
+  color: #f8f8f8;
+}
 .book-btn:hover {
   background-color: #4b0f1f;
   border: 2px solid #fcfcfc;
@@ -275,6 +281,7 @@ h1{
     font-size: 20px;
     line-height: 1.2;
   }
+  
    .icon {
         display: block;
         margin-left: 65vw;
@@ -309,6 +316,7 @@ h1{
     .hero2a{
       display: none;
     }
+   
      .footer-container{
         display: block;
         text-align: center;
@@ -320,4 +328,7 @@ h1{
     /* max-width: 1200px;
     margin: 0 auto; */
 }
+  .gallery{
+    display: none;
+  }
   }

@@ -44,7 +44,7 @@ hr {
     justify-content: space-between;
     position: fixed;
     float: left;
-    z-index: 5;
+    z-index: 50;
     padding: 10px;
     /* height: 65px; */
     width: 100%;
@@ -201,7 +201,7 @@ hr {
 .btn1:hover {
     background-color: #fcfcfc;
     transition: 1s ease-in;
-    transform: translateY(-9px);
+    transform: translateY(-4px);
     border-radius: 20px;
 }
 .btn1 a {
@@ -223,14 +223,14 @@ hr {
 }
 .card1 {
     display: flex;
-    gap: 30px;
-    padding-left: 60px;
-    padding-right: 60px;
+    gap: 40px;
+    padding-left: 90px;
+    /* padding-right: 60px; */
 }
 .card{ 
     background-color: #4b0f1f;
     color: #f8f8f8;
-    width: 400px;
+    width: 350px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     padding-bottom: 20px;
@@ -332,7 +332,7 @@ hr {
 
 .footer-section {
   flex: 2 5 220px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .footer-section h3,
@@ -438,12 +438,15 @@ hr {
     }
     .card1{
       display: block;
-     padding-left: 20px;
+     padding: 6%;
       margin: auto;
     }
     .card {
       margin-top: 20px;
       width: 350px;
+    }
+    .gallery{
+      display: none;
     }
     .luxury{
       gap: 5px;

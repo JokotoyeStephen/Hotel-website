@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Wrapper -->
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="bg-[#5C0A25] text-white w-64 p-6 space-y-6 hidden md:block">
+      <h2 class="text-2xl font-bold text-center">Hotel Admin</h2>
+      <nav class="flex flex-col space-y-3 mt-6">
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Dashboard</a>
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Manage Bookings</a>
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Rooms</a>
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Guests</a>
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Payments</a>
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Reviews</a>
+        <a href="#" class="hover:bg-[#40071A] p-2 rounded">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-8">
+      
+      <!-- Mobile Topbar -->
+      <div class="md:hidden flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-[#5C0A25]">Hotel Admin</h2>
+        <button id="menuToggle" class="text-[#5C0A25] focus:outline-none">
+          ☰
+        </button>
+      </div>
+
+      <!-- Greeting -->
+      <div class="bg-white rounded-xl shadow-md p-4 mb-6">
+        <h1 class="text-2xl font-semibold text-[#5C0A25]">Welcome, Admin 👋</h1>
+        <p class="text-gray-600">Here’s what’s happening today.</p>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="text-gray-600">Total Bookings</h3>
+          <p class="text-2xl font-bold text-[#5C0A25]">128</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="text-gray-600">Available Rooms</h3>
+          <p class="text-2xl font-bold text-[#5C0A25]">22</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="text-gray-600">Total Revenue</h3>
+          <p class="text-2xl font-bold text-[#5C0A25]">₦3,450,000</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Mobile Sidebar Toggle -->
+  <div id="mobileMenu" class="fixed top-0 left-0 h-full w-64 bg-[#5C0A25] text-white p-6 transform -translate-x-full transition-transform duration-300 md:hidden z-50">
+    <button id="closeMenu" class="mb-4 text-white text-xl">&times;</button>
+    <nav class="flex flex-col space-y-3">
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Dashboard</a>
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Manage Bookings</a>
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Rooms</a>
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Guests</a>
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Payments</a>
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Reviews</a>
+      <a href="#" class="hover:bg-[#40071A] p-2 rounded">Logout</a>
+    </nav>
+  </div>  
+    <script src="./script/index.js"></script>
+</body>
+</html>

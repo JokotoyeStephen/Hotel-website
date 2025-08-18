@@ -1,6 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
     "liveServer.settings.port": 5501,
-    "files.autoSave": "onWindowChange",
+    "files.autoSave": "afterDelay",
     "files.autoSaveWhenNoErrors": true
 }

@@ -12,7 +12,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -30,10 +30,10 @@
           <li><a href="./room.html">Rooms</a></li>
           <li><a href="./offer.html">Offers</a></li>
           <li><a href="./booking.html">Booking</a></li>
-          <li><a href="./gallery.html">Gallery</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li class="gallery"><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./contact.html">Feedback</a></li>
         </ul>
-        <button class="btn"><a href="">BOOKING</a></button>
+        <button class="btn"><a href="./booking.html">BOOKING</a></button>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </div>
     </section>
@@ -52,15 +52,15 @@
         <h1>We Value Your Feedback</h1>
         <p>Please take a moment to share your experience with us.</p>
 
-        <form class="feedback-form" action="/contact" method="POST">
+        <form class="feedback-form" action="/feedback" method="POST" id="feedbackForm">
           <label for="name">Full Name</label>
           <input type="text" id="name" placeholder="John Doe" name="name" required />
 
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@example.com" name="lastname" required />
+          <input type="email" id="email" placeholder="you@example.com" name="email" required />
 
           <label>Overall Rating</label>
-          <div class="stars">
+          <div class="stars" id="star"name="rating">
             <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
             <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
             <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
@@ -69,27 +69,27 @@
           </div>
 
           <label for="comment">Your Comment</label>
-          <textarea id="comment" placeholder="Tell us about your stay..." required></textarea>
+          <textarea name="comment" id="comment" placeholder="Tell us about your stay..." required></textarea>
 
           <label for="cleanliness">Cleanliness</label>
-          <select id="cleanliness">
-            <option value="">Rate</option>
-            <option>Excellent</option>
-            <option>Good</option>
-            <option>Fair</option>
-            <option>Poor</option>
+          <select id="clean" name="clean">
+            <option value="rate">Rate</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
           </select>
 
           <label for="service">Service</label>
-          <select id="service">
-            <option value="">Rate</option>
-            <option>Excellent</option>
-            <option>Good</option>
-            <option>Fair</option>
-            <option>Poor</option>
+          <select id="service" name="service">
+            <option value="rate">Rate</option>
+            <option value="excellent" id="exe">Excellent</option>
+            <option value="great">Great</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
           </select>
 
-          <button type="submit" class="btn"><a href="">Submit Feedback</a></button>
+          <button type="submit" class="btn">Submit Feedback</button>
         </form>
       </div>
     </div>
@@ -145,7 +145,7 @@
       <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
     </div>
   </footer>
-  <script src="./script/index.js"></script>
+  <script src="./script/feedback.js"></script>
 </body>
 
 </html>

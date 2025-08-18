@@ -90,7 +90,7 @@ body{
 
 .page-wrapper {
   padding: 30px;
-  margin-top: 16vh;
+  margin-top: 13vh;
   display: flex;
   min-height: 100vh;
   flex-wrap: wrap;
@@ -117,7 +117,7 @@ body{
   background: white;
   display: flex;
   align-items: center;
-  padding: 40px;
+  padding: 37px;
 }
 
 .container {
@@ -133,12 +133,12 @@ h1 {
 
 p {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .feedback-form label {
   display: block;
-  margin-top: 15px;
+  margin-top: 12px;
   font-weight: 500;
 }
 
@@ -155,14 +155,14 @@ p {
 
 textarea {
   resize: vertical;
-  height: 100px;
+  height: 70px;
 }
 
 .stars {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .stars input {
@@ -171,9 +171,9 @@ textarea {
 
 .stars label {
   font-size: 25px;
-  color: #ccc;
+  color: #4b0f1f;
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 
 .stars input:checked ~ label,
@@ -187,6 +187,7 @@ textarea {
 .footer {
   border-top: 2px solid #fbbf24;
   margin-top: 30px;
+  text-align: left;
   background-color: #4b0f1f;
   color: #f8f8f8;
   padding: 50px 20px 20px;
@@ -217,6 +218,8 @@ textarea {
   font-size: 14px;
   line-height: 1.6;
   color: #fcfcfc;
+  text-align: left;
+
 }
 
 .footer-section ul {
@@ -251,7 +254,7 @@ textarea {
 }
 
 .footer-bottom {
-  text-align: center;
+  /* text-align: center; */
   padding-top: 20px;
   border-top: 1px solid #e5a11e;
   font-size: 13px;
@@ -296,7 +299,15 @@ textarea {
         display: block;
         text-align: center;
     }
-
+    .gallery{
+      display: none;
+    }
+ .footer p,li{
+      text-align: center;
+    }
+   .container {
+    border-radius: 30px;
+  }
 .page-wrapper {
     flex-direction: column;
   }

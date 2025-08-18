@@ -222,6 +222,9 @@ hr {
         padding: 0;
         top: 70px;
     }
+    .gallery{
+      display: none;
+    }
     .navbar_list a {
         display: block;
         font-size: 13px;

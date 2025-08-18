@@ -30,8 +30,8 @@
           <li><a href="./room.html">Rooms</a></li>
           <li><a href="./offer.html">Offers</a></li>
           <li><a href="./booking.html">Booking</a></li>
-          <li><a href="./gallery.html">Gallery</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li class="gallery"><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./contact.html">Feedback</a></li>
         </ul>
         <button class="btn5"><a href="">BOOKING</a></button>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -42,6 +42,7 @@
     <section>
       <div class="container">
         <h1>Hotel Booking Form</h1>
+        <p style="text-align: center;margin-bottom: 30px;">Make Your Reservation Now, just fill the form and everything is ready!!</p>
         <form class="booking-form" action="/booking" method="POST">
 <!-- id="booking-form" -->
           <!-- SECTION 1: Guest Information -->
@@ -101,17 +102,17 @@
 
 
             <label>Room Type</label>
-            <select required  name="room">
+            <select required  name="room" id="room">
               <option value="">Select Room Type</option>
-              <option>Standard Room</option>
-              <option>Deluxe Room</option>
-              <option>Executive Room</option>
-              <option>Accessible Room</option>
-              <option>Premier Room</option>
-              <option>Presidential Room</option>
-              <option>Twin Room</option>
-              <option>Villa / chalet Room</option>
-              <option>Cabana Room</option>
+              <option value="Standard">Standard Room</option>
+              <option value="Deluxe">Deluxe Room</option>
+              <option value="Executive">Executive Room</option>
+              <option value="Accessible">Accessible Room</option>
+              <option value="premier">Premier Room</option>
+              <option value="presidential">Presidential Room</option>
+              <option value="Twin">Twin Room</option>
+              <option value="Villa">Villa / chalet Room</option>
+              <option value="Cabana">Cabana Room</option>
             </select>
           </fieldset>
 
@@ -122,6 +123,7 @@
             <label><input name="airbox" type="checkbox" /> Airport Pickup</label>
             <label><input name="extrabox" type="checkbox" /> Extra Bed</label>
             <label><input name="latebox" type="checkbox" /> Late Checkout</label>
+            <label><input name="pet" type="checkbox" /> Pets</label>
           </fieldset>
 
           <!-- SECTION 4: Special Requests -->
@@ -131,7 +133,7 @@
           </fieldset>
 
           <!-- SECTION 5: Payment Info -->
-          <fieldset>
+          <!-- <fieldset>
             <legend>Payment Information</legend>
 
             <label>Cardholder Name</label>
@@ -150,10 +152,10 @@
                 <input type="text" name="cw" placeholder="123" required />
               </div>
             </div>
-          </fieldset>
+          </fieldset> -->
 
           <!-- Agreement -->
-          <button type="submit" class="btn">Confirm Booking</button>
+         <button type="submit" class="btn" id="payBtn">Confirm Booking</button>
         </form>
       </div>
       <section>
@@ -214,7 +216,9 @@
         <p>&copy; 2025 ZOE Hotel. All rights reserved.</p>
       </div>
     </footer>
-    <script src="./script/index.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+   <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="./script/book.js"></script>
 </body>
 
 </html>

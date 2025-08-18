@@ -1,3 +1,5 @@
+// const { json } = require("express");
+
  const menuIcon = document.getElementById('our');
 const navlinks = document.getElementById('menuicon');
 
@@ -5,7 +7,7 @@ menuIcon.addEventListener('click', () => {
     navlinks.classList.toggle('active');
 });
  
- var typed = new Typed('#typed', {
+ let typed = new Typed('#typed', {
       strings: ["Enjoy Your Dream Vacation","Find your perfect stay with us","Welcome to  ZOE Hotel <br> Where Comfort Meets Elegance", "Discover a Place of Peace, Luxury & Comfort", "Escape the Ordinary, Stay in Style"],
       typeSpeed: 100,
       backspeed: 50,
@@ -57,4 +59,14 @@ menuIcon.addEventListener('click', () => {
       setTimeout(showSlides, 12000); // Change slide every 5 seconds
     }
 
-    
+     const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+    });
