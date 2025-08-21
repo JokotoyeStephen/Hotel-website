@@ -19,7 +19,9 @@ document.querySelector("#feedbackForm").addEventListener("submit", async functio
     });
 
     const result = await response.json();
-
+    console.log(result);
+    console.log(result.status);
+    
     if (result.status === "success") {
       Swal.fire({
         icon: "success",
@@ -37,6 +39,7 @@ document.querySelector("#feedbackForm").addEventListener("submit", async functio
       });
     }
   } catch (error) {
+    console.log(error.message)
     Swal.fire({
       icon: "error",
       title: "Server Error",
@@ -44,3 +47,30 @@ document.querySelector("#feedbackForm").addEventListener("submit", async functio
     });
   }
 });
+
+        document.getElementById('feedbackForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            const button = document.getElementById('submitFeedback');
+            button.disabled = true; // Disable the button
+            button.textContent = 'Submitting...'; // Change button text
+
+            // Simulate form submission (e.g., AJAX call)
+            setTimeout(() => {
+                // Here you would typically handle the form submission
+                // For example, using fetch or XMLHttpRequest
+
+                // Show SweetAlert
+                Swal.fire({
+                    title: 'Feedback Submitted',
+                    text: 'Your feedback has been received successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    // Re-enable the button and reset text after the alert is closed
+                    button.disabled = false;
+                    button.textContent = 'Submit Feedback';
+                });
+
+            }, 2000); // Simulate a delay
+        };

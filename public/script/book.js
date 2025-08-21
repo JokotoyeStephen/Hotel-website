@@ -1,56 +1,65 @@
- const roomPrices = {
-        "Standard": 95000,
-        "Deluxe": 70000,
-        "Executive": 165000,
-        "Accessible": 200000,
-        "Premier": 300000,
-        "Presidential": 350000,
-        "Twin": 180000,
-        "Villa": 370000,
-        "Cabana": 450000,
-    };
+const roomPrices = {
+    "Standard": 40000,
+    "Deluxe": 65000,
+    "Executive": 80000,
+    "Accessible": 90000,
+    "Premier": 150000,
+    "Presidential": 200000,
+    "Twin": 120000,
+    "Villa": 250000,
+    "Cabana": 300000,
+};
 
-    // Night calculation
-    function calculateNights(indate, outdate) {
-        const checkIn = new Date(indate);
-        const checkOut = new Date(outdate);
-        const diffTime = Math.abs(checkOut - checkIn);
-        return Math.ceil(diffTime / (1000 * 60 * 60 * 24)) || 1; // Return at least 1 night
-    }
+// Night calculation
+function calculateNights(indate, outdate) {
+    const checkIn = new Date(indate);
+    const checkOut = new Date(outdate);
+    const diffTime = Math.abs(checkOut - checkIn);
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24)) || 1; // Return at least 1 night
+}
 
-    document.getElementById('payBtn').onclick = function (event) {
-        // Prevent the default form submission
-        event.preventDefault();
+document.getElementById('payBtn').onclick = function (event) {
+    // Prevent the default form submission
+    event.preventDefault();
 
-        const email = document.querySelector('input[name="email"]').value; // Get the email
-        const roomType = document.getElementById('room').value; // Get selected room type
-        const checkInDate = document.querySelector('input[name="indate"]').value; // Get check-in date
-        const checkOutDate = document.querySelector('input[name="outdate"]').value; // Get check-out date
+    const email = document.querySelector('input[name="email"]').value; // Get the email
+    const roomType = document.getElementById('room').value; // Get selected room type
+    const checkInDate = document.querySelector('input[name="indate"]').value; // Get check-in date
+    const checkOutDate = document.querySelector('input[name="outdate"]').value; // Get check-out date
 
-        // Calculate nights and total amount
-        const nights = calculateNights(checkInDate, checkOutDate);
-        const pricePerNight = roomPrices[roomType];
-        const totalAmount = nights * pricePerNight;
+    // Calculate nights and total amount
+    const nights = calculateNights(checkInDate, checkOutDate);
+    const pricePerNight = roomPrices[roomType];
+    const totalAmount = nights * pricePerNight;
 
-        // Initialize Paystack payment
-        const handler = PaystackPop.setup({
-            key: 'pk_test_359a8a92d754a8fa87f12b0feb73e871f69d7a2c', // Replace with your Paystack public key
-            email: email,
-            amount: totalAmount * 100, // Amount in kobo
-            currency: 'NGN',
-            callback: function (response) {
-                alert('Payment successful! Transaction reference: ' + response.reference);
-                // Now submit the form data to the backend
-                document.querySelector('.booking-form').submit();
-            },
-            onClose: function () {
-                alert('Payment popup closed.');
-            }
-        });
+    // Initialize Paystack payment
+    const handler = PaystackPop.setup({
+        key: 'pk_test_359a8a92d754a8fa87f12b0feb73e871f69d7a2c',  // Paystack public key
+        email: email,
+        amount: totalAmount * 100, // Amount in kobo
+        currency: 'NGN',
+        callback: function (response) {
+            Swal.fire({
+                title: 'Payment Successful',
+                text: 'Transaction reference: ' + response.reference,
+                icon: 'success',
+                confirmButtonText: 'Okay'
+            });
+            // Now submit the form data to the backend
+            document.querySelector('.booking-form').submit();
+        },
+        onClose: function () {
+            Swal.fire({
+                title: 'Payment Closed',
+                text: 'The payment popup has been closed.',
+                icon: 'info',
+                confirmButtonText: 'Okay'
+            });
+        }
+    });
 
-        handler.openIframe(); // Open the Paystack payment popup
-    };
-
+    handler.openIframe(); // Open the Paystack payment popup
+};
 
 function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);

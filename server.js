@@ -36,15 +36,15 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Room pricing
 const roomPrices = {
-  "standard room": 95000,
-  "deluxe room": 70000,
-  "executive room": 165000,
-  "accessible room": 200000,
-  "premier room": 300000,
-  "presidential room": 350000,
-  "twin room": 180000,
-  "villa room": 370000,
-  "cabana room": 450000,
+    "Standard": 40000,
+    "Deluxe": 65000,
+    "Executive": 80000,
+    "Accessible": 90000,
+    "Premier": 150000,
+    "Presidential": 200000,
+    "Twin": 120000,
+    "Villa": 250000,
+    "Cabana": 300000,
 };
 
 // Night calculation
@@ -260,17 +260,23 @@ app.post("/feedback", async (req, res) => {
     `
   };
 
-try {
-  await transporter.sendMail(mailOptions);
-  res.redirect("/successful.html"); 
-}
-catch (err) {
-  console.log("send error:",err.message);
-   res.redirect("/error.html");
-};
-})
+ try {
+    const feedback = req.body.feedback; // Assuming feedback is sent in the body
+    // Here you would typically process the feedback (e.g., save to a database)
 
+    res.json({
+      status: "success",
+      message: "Your feedback has been received successfully!",
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "error",
+      message: "Something went wrong, please try again.",
+    });
+  }
+});
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
