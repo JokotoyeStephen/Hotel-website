@@ -106,7 +106,17 @@ button{
 .hero {
   text-align: center;
   padding-top: 20vh;
-  padding-bottom: 10vh;
+  padding-bottom: 5 vh;
+}
+.textal{
+   font-family: "Fredoka", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+    font-variation-settings:
+    "wdth" 100 !important;
+    padding-top: 0px !important;
+    font-size: 4vh !important;
+    font-weight: 600;
 }
 
 .hero h1 {
@@ -309,9 +319,15 @@ h1{
         display: block;
     }
     .navbar_list a:hover {
-        background-color: #f8f8f8;
-        border: 1px solid #e5a11e;
-        color: #4b0f1f;
+     background-color: #3b0101;
+        border-left: 5px solid #e0a800;
+        color: #f8f8f8;
+    }
+    .hero{
+      padding-top: 12vh;
+    }
+    .hero p{
+      padding: 5px;
     }
     .hero2a{
       display: none;

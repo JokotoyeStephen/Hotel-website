@@ -9,6 +9,16 @@ body{
      color: #f8f8f8;
      background-color: #4b0f1f;
 }
+.textal{
+   font-family: "Fredoka", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+    font-variation-settings:
+    "wdth" 100 !important;
+    padding-top: 0px !important;
+    font-size: 4vh !important;
+    font-weight: 600;
+}
 hr {
     width: 100px;
     border: 1px solid #e5a11e;
@@ -310,9 +320,9 @@ hr {
         display: block;
     }
     .navbar_list a:hover {
-        background-color: #f8f8f8;
-        border: 1px solid #e5a11e;
-        color: #4b0f1f;
+          background-color: #3b0101;
+        border-left: 5px solid #e0a800;
+        color: #f8f8f8;
     }
     .header{
         background-image: url('../image/beautiful-bright-empire-state-building-nighttime.jpg');
@@ -320,17 +330,26 @@ hr {
         animation: none;
         top: 0;
         width: 100%;
-        height: 110vh;
+        height: 670px;
         background-repeat: no-repeat;
+    }
+    .hero4{
+        padding-top: 12vh;
+        padding-bottom: 10px;
     }
     .hero4 h1 {
         text-shadow: 3px 0 #4b0f1f;
+        /* padding-top: 10px; */
     }
     .gallery{
         display: none;
     }
+    .hero4 h2{
+        padding-top: 5px;
+    }
     .hero4 p {
-        line-height: 1.1;
+        /* padding-top: 0px; */
+        line-height: 1;
     }
     .hero4{
         line-height: 1.3;
